@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#16140f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAC70lEQVR4nO3d223VQBRAUQfxQQ+0R1kUkabogb/wdaUoSiAvZJ991mrAM+OtsaOMru8e7o+HAyK+nD0A+EyCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNClfzx7AJN9/fDvlur9+/j7luhPZoV/prJjPvvY0gn6FKwR1hTFMIOh/uFJIVxrLVQn6L64Y0BXHdCWCJkXQpAiaFEGTclf7NLI/mt6u9I+bTNBC/rhC2OODFvLnmxz26HdoMf8fk9d1dNDw1NigJ+8iE0xd37FBw3NGBj1195hm4jqPDBpeImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAialHUf3pz8y5rvNfEHY95r1Q69Mebj2DXvVUHTtyroTY/exzbNe9079Kabu9GqHZo+QZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETcq6w0mbzgbfbDqQtWqH3hjzceya96qg6VsV9KZH72Ob5r3uHXrTzd1o1Q5Nn6BJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZl3eGkTWeDbzYdyFq1Q2+M+Th2zXtV0PStCnrTo/exTfNe9w696eZutGqHpk/QpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkZGfSmTyycaeI6jwwaXjI26Im7xyRT13ds0PCc0UFP3UWubvK63j3cHw9nD+Iz+BjQx00O+SYT9I2w364Q8k0uaHYb/Q4NTwmaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGT8gdIbFj/ZMIF4AAAAABJRU5ErkJggg==">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAC70lEQVR4nO3d223VQBRAUQfxQQ+0R1kUkabogb/wdaUoSiAvZJ991mrAM+OtsaOMru8e7o+HAyK+nD0A+EyCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNClfzx7AJN9/fDvlur9+/j7luhPZoV/prJjPvvY0gn6FKwR1hTFMIOh/uFJIVxrLVQn6L64Y0BXHdCWCJkXQpAiaFEGTclf7NLI/mt6u9I+bTNBC/rhC2OODFvLnmxz26HdoMf8fk9d1dNDw1NigJ+8iE0xd37FBw3NGBj1195hm4jqPDBpeImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAialHUf3pz8y5rvNfEHY95r1Q69Mebj2DXvVUHTtyroTY/exzbNe9079Kabu9GqHZo+QZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETcq6w0mbzgbfbDqQtWqH3hjzceya96qg6VsV9KZH72Ob5r3uHXrTzd1o1Q5Nn6BJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZl3eGkTWeDbzYdyFq1Q2+M+Th2zXtV0PStCnrTo/exTfNe9w696eZutGqHpk/QpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkZGfSmTyycaeI6jwwaXjI26Im7xyRT13ds0PCc0UFP3UWubvK63j3cHw9nD+Iz+BjQx00O+SYT9I2w364Q8k0uaHYb/Q4NTwmaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGT8gdIbFj/ZMIF4AAAAABJRU5ErkJggg==">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%20%22Carnet%20de%20Bord%20%5Cu2014%20Merch%22%2C%20%22short_name%22%3A%20%22Carnet%20Merch%22%2C%20%22start_url%22%3A%20%22.%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22orientation%22%3A%20%22portrait%22%2C%20%22background_color%22%3A%20%22%2316140f%22%2C%20%22theme_color%22%3A%20%22%2316140f%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAKUElEQVR4nO3c23HbOhRAUfqOP9yD23NZKsJNqQf96X4lk4dtUQ%2BHAPdaFWBC4GBTjvR0fl/OCwCQ8t/WCwAA/j0BAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABA0PPWC4C9en172XoJu3A8nLZeAuzS0/l9OW%2B9CNgTF//3EALwWAIAHsTF/28IAXgMAQB3cvFvQwjAffwnQLiDy387/u3hPgIAbuQC2p5nALcTAHADF884PAu4jQCAK7lwxuOZwPUEAAAECQC4gjfNcXk2cB0BAABBAgBW8oY5Ps8I1hMAABAkAGAFb5bz8KxgHQEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABD2d35fz1otgX/wWO3yP4%2BG09RLYEQHA3Vz4sA1BwD0EADdz8cMYhAC3EABczcUPYxICXEMAsJqLH%2BYgBFjDtwBYxeUP83BeWUMAcJFhAvNxbrlEAPAlQwTm5fzyFQHApwwPmJ9zzGcEAB8yNGA/nGc%2BIgD4i2EB%2B%2BNc8ycBwG8MCdgv55tfCQAACBIA/OTtAPbPOecHAQAAQQKAZVm8FUCJ886yCAAASBIAeBuAIOceAQAAQQIAAIIEAAAECYA4fweELue/TQAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACHreegGw1vFw2noJsMrr28vWS4CLfALAFFz%2BzMR%2BZQYCgOEZpszIvmV0AoChGaLMzP5lZAIAAIIEAAAECQAACBIADM3XqZiZ/cvIBADDM0SZkX3L6AQAUzBMmYn9ygz8EiDTMFQBHscnAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCBAAABAkAAAgSAAAQJAAAIEgAAECQAACAIAEAAEECAACCnrdeAKx1PJy2XgKs8vr2svUS4CKfADAFlz8zsV%2BZgQBgeIYpM7JvGZ0AYGiGKDOzfxmZAACAIAEAAEECAACCBABD83UqZmb/MjIBwPAMUWZk3zI6AcAUDFNmYr8yA78EyDQMVYDH8QkAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgCABAABBAgAAggQAAAQJAAAIEgAAECQAACBIAABAkAAAgKDnrRcAax0Pp62XAKu8vr1svQS4yCcATMHlz0zsV2YgABieYcqM7FtGJwAYmiHKzOxfRiYAACBIAABAkAAAgCABwNB8nYqZ2b%2BMTAAwPEOUGdm3jE4AMAXDlJnYr8zALwEyDUMV4HF8AgAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSADEHQ%2BnrZcAbMT5bxMAABAkAAAgSAAAQJAAwN8BIci5RwAAQJAAYFkWbwNQ4ryzLAIAAJIEAD95K4D9c875QQAAQJAA4DfeDmC/nG9%2BJQD4iyEB%2B%2BNc8ycBwIcMC9gP55mPCAA%2BZWjA/JxjPiMA%2BJLhAfNyfvmKAOAiQwTm49xyiQBgFcME5uG8ssbT%2BX05b70I5vL69rL1EoAPuPi5hgDgZkIAxuDi5xYCgLsJAdiGi597CAAeThDA93Dh80gCAACCfAsAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIIEAAAECQAACBIAABAkAAAgSAAAQJAAAIAgAQAAQQIAAIL%2BB3k%2B2nw3uzyKAAAAAElFTkSuQmCC%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%20maskable%22%7D%5D%7D">
+<title>Carnet de Bord — Merch</title>
+<style>
+  :root{
+    --bg:#16140f; --panel:#211e17; --panel2:#2b2820; --line:#3a362c;
+    --cream:#f2ede1; --muted:#9a948a; --faint:#6b665b;
+    --amber:#ffb000; --amber2:#ff8a00; --danger:#e5484d; --ok:#5aa86a; --warn:#e0a93b;
+    --r:14px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    background-image:radial-gradient(circle at 18% 0%,rgba(255,176,0,.05),transparent 45%),
+                     radial-gradient(circle at 100% 100%,rgba(255,138,0,.04),transparent 40%);
+    color:var(--cream);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased;
+    padding-bottom:96px;min-height:100vh;
+  }
+  .mono{font-family:ui-monospace,"Roboto Mono","DejaVu Sans Mono",Menlo,Consolas,monospace}
+  header{
+    position:sticky;top:0;z-index:40;
+    background:rgba(22,20,15,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);padding:14px 16px 12px;
+  }
+  .brand{display:flex;align-items:center;gap:10px}
+  .dot{width:11px;height:11px;border-radius:3px;background:var(--amber);box-shadow:0 0 12px var(--amber2)}
+  .brand h1{font-size:17px;font-weight:900;letter-spacing:.5px;margin:0;text-transform:uppercase}
+  .brand .sub{font-size:10.5px;color:var(--faint);letter-spacing:2px;text-transform:uppercase;margin-top:-2px}
+  main{padding:16px;max-width:760px;margin:0 auto}
+  section{display:none;animation:fade .25s ease}
+  section.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin:4px 0 14px;font-weight:800}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+  .card.accent{border-left:3px solid var(--amber)}
+
+  /* dashboard stats */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+  .stat .n{font-family:ui-monospace,"Roboto Mono",monospace;font-size:30px;font-weight:700;line-height:1;color:var(--cream)}
+  .stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:6px}
+  .stat.hi .n{color:var(--amber)}
+
+  label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:12px 0 5px;font-weight:600}
+  input,select,textarea{
+    width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:10px;
+    color:var(--cream);font-family:inherit;font-size:16px;padding:12px 13px;outline:none;
+  }
+  textarea{min-height:84px;resize:vertical;line-height:1.5}
+  input:focus,select:focus,textarea:focus{border-color:var(--amber)}
+  input::placeholder,textarea::placeholder{color:var(--faint)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .field-mic{position:relative}
+  .field-mic textarea{padding-right:50px}
+  .micbtn{
+    position:absolute;right:8px;bottom:8px;width:38px;height:38px;border-radius:10px;
+    border:1px solid var(--line);background:var(--panel);color:var(--cream);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px
+  }
+  .micbtn.rec{background:var(--danger);border-color:var(--danger);animation:pulse 1.1s infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(229,72,77,.5)}50%{box-shadow:0 0 0 8px rgba(229,72,77,0)}}
+
+  button{font-family:inherit;cursor:pointer}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;
+    background:var(--amber);color:#1a1408;border:none;border-radius:11px;
+    font-weight:800;font-size:15px;letter-spacing:.5px;padding:14px;text-transform:uppercase;margin-top:14px}
+  .btn:active{transform:scale(.99)}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--cream)}
+  .btn.danger{background:transparent;border:1px solid var(--danger);color:var(--danger)}
+  .btn.sm{width:auto;padding:9px 14px;font-size:12px;margin:0}
+
+  /* photo */
+  .photos{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .ph{position:relative;width:72px;height:72px;border-radius:9px;overflow:hidden;border:1px solid var(--line)}
+  .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph .x{position:absolute;top:2px;right:2px;width:20px;height:20px;border-radius:6px;background:rgba(0,0,0,.7);
+    color:#fff;border:none;font-size:13px;display:flex;align-items:center;justify-content:center;line-height:1}
+  .addph{width:72px;height:72px;border-radius:9px;border:1px dashed var(--line);background:var(--panel2);
+    color:var(--muted);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:22px}
+  .addph span{font-size:9px;letter-spacing:.5px}
+
+  /* list entries */
+  .entry{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:13px 14px;margin-bottom:10px;border-left:3px solid var(--line)}
+  .entry.crit{border-left-color:var(--danger)}
+  .entry.warnb{border-left-color:var(--warn)}
+  .entry.okb{border-left-color:var(--ok)}
+  .entry .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+  .entry .ttl{font-weight:800;font-size:15px}
+  .entry .meta{font-family:ui-monospace,"Roboto Mono",monospace;font-size:11px;color:var(--muted);margin-top:3px}
+  .entry .desc{font-size:14px;color:#d8d2c5;margin-top:8px;white-space:pre-wrap}
+  .tag{display:inline-block;font-family:ui-monospace,"Roboto Mono",monospace;font-size:10px;padding:3px 7px;border-radius:6px;
+    background:var(--panel2);border:1px solid var(--line);color:var(--muted);letter-spacing:.5px;text-transform:uppercase}
+  .tag.c{color:var(--danger);border-color:var(--danger)}
+  .tag.w{color:var(--warn);border-color:var(--warn)}
+  .tag.o{color:var(--ok);border-color:var(--ok)}
+  .entry .acts{display:flex;gap:8px;margin-top:10px}
+  .iconbtn{background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:6px 11px;font-size:12px}
+  .empty{text-align:center;color:var(--faint);padding:34px 10px;font-size:14px}
+  .empty .big{font-size:30px;margin-bottom:8px;opacity:.6}
+
+  /* tabs */
+  nav{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(22,20,15,.96);
+    backdrop-filter:blur(12px);border-top:1px solid var(--line);display:flex;padding:6px 4px env(safe-area-inset-bottom)}
+  nav button{flex:1;background:none;border:none;color:var(--faint);padding:8px 2px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:9.5px;letter-spacing:.3px;text-transform:uppercase;font-weight:600}
+  nav button .ic{font-size:20px}
+  nav button.on{color:var(--amber)}
+
+  /* fab */
+  .fab{position:fixed;right:18px;bottom:80px;z-index:45;width:58px;height:58px;border-radius:50%;
+    background:var(--amber);color:#1a1408;border:none;font-size:30px;font-weight:300;
+    box-shadow:0 8px 24px rgba(255,138,0,.4);display:flex;align-items:center;justify-content:center}
+
+  /* modal */
+  .modal{position:fixed;inset:0;z-index:60;background:rgba(8,7,4,.7);backdrop-filter:blur(4px);
+    display:none;align-items:flex-end;justify-content:center}
+  .modal.open{display:flex}
+  .sheet{background:var(--bg);border:1px solid var(--line);border-bottom:none;border-radius:20px 20px 0 0;
+    width:100%;max-width:760px;max-height:92vh;overflow-y:auto;padding:18px 16px 28px;animation:up .28s ease}
+  @keyframes up{from{transform:translateY(40px);opacity:.6}to{transform:none;opacity:1}}
+  .sheet .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+  .sheet .hd h3{font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin:0}
+  .closeb{background:none;border:none;color:var(--muted);font-size:26px;line-height:1;padding:0 4px}
+  .grabber{width:38px;height:4px;border-radius:3px;background:var(--line);margin:0 auto 12px}
+
+  .hint{font-size:12px;color:var(--faint);line-height:1.5;margin-top:8px}
+  .pill{display:inline-flex;gap:6px;align-items:center;font-family:ui-monospace,"Roboto Mono",monospace;font-size:11px;
+    background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:5px 11px;color:var(--muted)}
+  .toast{position:fixed;left:50%;bottom:150px;transform:translateX(-50%) translateY(20px);z-index:80;
+    background:var(--cream);color:#1a1408;font-weight:700;font-size:13px;padding:11px 18px;border-radius:30px;
+    opacity:0;transition:.3s;pointer-events:none}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .divider{height:1px;background:var(--line);margin:16px 0}
+  .seg{display:inline-flex;background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:2px}
+  .seg button{background:none;border:none;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:6px 11px;border-radius:7px}
+  .seg button.on{background:var(--amber);color:#1a1408}
+  .daybar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+  .daynav{display:flex;align-items:center;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:4px 5px}
+  .daynav button{background:var(--panel2);border:1px solid var(--line);color:var(--cream);width:34px;height:34px;border-radius:8px;font-size:18px;line-height:1;padding:0}
+  .daynav button:disabled{opacity:.3}
+  .daynav input[type=date]{border:none;background:none;color:var(--cream);font-family:ui-monospace,"Roboto Mono",monospace;font-size:13px;width:auto;min-width:120px;padding:6px 2px;text-align:center}
+  .daycount{font-family:ui-monospace,"Roboto Mono",monospace;font-size:12px;color:var(--muted)}
+  .dayhint{font-size:11.5px;color:var(--faint);margin:0 2px 14px;line-height:1.45}
+  .card2{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin:14px 0}
+  .dirstore{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px;margin-bottom:11px;border-left:3px solid var(--amber)}
+  .dirhd{display:flex;gap:8px;align-items:center}
+  .dirnom{font-weight:800;font-size:15px;flex:1;background:var(--panel2)}
+  .dirville{margin-top:8px;font-size:13px;color:var(--muted)}
+  .dirlbl{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:12px 0 7px;font-weight:600}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--amber);color:var(--cream);border-radius:20px;padding:5px 6px 5px 11px;font-size:12.5px}
+  .chip button{background:rgba(0,0,0,.3);border:none;color:var(--cream);width:19px;height:19px;border-radius:50%;font-size:13px;line-height:1;padding:0}
+  .chipmuted{font-size:12px;color:var(--faint);font-style:italic}
+  .addfourn{display:flex;gap:8px;margin-top:11px}
+  .addfourn input{flex:1}
+  .addfourn .iconbtn{white-space:nowrap}
+  .pickwrap{margin-top:2px}
+  .pchip{display:inline-flex;align-items:center;background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:20px;padding:8px 14px;font-size:13px;margin:0 7px 8px 0}
+  .pchip.on{background:var(--amber);border-color:var(--amber);color:#1a1408;font-weight:700}
+  .picknone{font-size:12px;color:var(--faint);font-style:italic;margin-bottom:9px}
+  .pickadd{display:flex;gap:8px;margin-top:4px}
+  .pickadd input{flex:1}
+  .pickadd .iconbtn{white-space:nowrap}
+  .alertbar{background:rgba(224,169,59,.12);border:1px solid var(--warn);border-radius:12px;padding:13px 14px;margin-bottom:14px}
+  .alerttxt{font-size:13.5px;color:var(--cream);line-height:1.5;margin-bottom:10px}
+  .alertbtns{display:flex;gap:10px;flex-wrap:wrap}
+  .alertbtns .btn{margin-top:0}
+  .brkrow{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+  .brkrow:last-child{border-bottom:none}
+  .brkrow .lbl{font-size:13px;font-weight:600}
+  .brkrow .lbl .sub{display:block;font-family:ui-monospace,"Roboto Mono",monospace;font-size:10.5px;color:var(--faint);margin-top:1px;text-transform:none;letter-spacing:0}
+  .brkrow .vals{text-align:right}
+  .brkrow .vals .big{font-family:ui-monospace,"Roboto Mono",monospace;font-size:19px;font-weight:700;color:var(--amber)}
+  .brkrow .vals .det{font-family:ui-monospace,"Roboto Mono",monospace;font-size:10.5px;color:var(--muted);margin-top:1px}
+  .brkrow .vals .det b{color:var(--ok);font-weight:700}
+  .brkrow .vals .det i{color:var(--warn);font-style:normal;font-weight:700}
+  .exprow{display:flex;gap:10px;margin-top:10px}
+  .exprow .btn{margin-top:0}
+  .mhead{font-family:ui-monospace,"Roboto Mono",monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--faint);margin:20px 2px 9px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+  .mhead:first-child{margin-top:0}
+  @media print{
+    nav,.fab,header .sub,.micbtn{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="dot"></div>
+    <div>
+      <h1>Carnet de Bord</h1>
+      <div class="sub">Suivi d'activité merchandising</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- DASHBOARD -->
+  <section id="dash" class="active">
+    <h2>Synthèse de l'activité</h2>
+    <div id="backupAlert" class="alertbar" style="display:none"></div>
+    <div class="grid">
+      <div class="stat hi"><div class="n" id="s-visits">0</div><div class="l">Visites réalisées</div></div>
+      <div class="stat"><div class="n" id="s-anom">0</div><div class="l">Anomalies signalées</div></div>
+      <div class="stat hi"><div class="n mono" id="s-hsup">0h</div><div class="l">Heures sup. cumulées</div></div>
+      <div class="stat"><div class="n" id="s-montage">0</div><div class="l">Montages réalisés</div></div>
+    </div>
+    <div class="card accent" style="margin-top:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Heures sup. ce mois-ci</div>
+          <div class="mono" style="font-size:26px;font-weight:700;color:var(--amber)" id="s-hsup-month">0h00</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">En attente de validation</div>
+          <div class="mono" style="font-size:26px;font-weight:700" id="s-hsup-pending">0h00</div>
+        </div>
+      </div>
+    </div>
+    <div class="card accent">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+        <div>
+          <div style="font-weight:800;font-size:14px">Magasins & fournisseurs</div>
+          <div class="hint" style="margin-top:2px"><span id="s-magasins">0</span> magasin(s) au répertoire</div>
+        </div>
+        <button class="btn sm" onclick="openDirectory()">Gérer</button>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Stockage de l'appli</div>
+      <div class="pill"><span id="s-photos">0 photos</span> · <span id="s-usage">…</span></div>
+      <div class="pill" style="margin-top:8px">Protection anti-purge : <span id="s-persist">…</span></div>
+      <div class="hint" id="s-filewarn" style="display:none;color:var(--warn);font-weight:600;margin-top:8px"></div>
+      <div class="hint">Données conservées sur cet appareil uniquement. Le navigateur ne purge qu'en cas de disque saturé, et jamais ce site si la protection est active. Garde tout de même une sauvegarde régulière (JSON + photos) sur ton Drive.</div>
+    </div>
+  </section>
+
+  <!-- VISITES -->
+  <section id="visites"><h2>Visites en point de vente</h2><div class="daybar" id="bar-visites"></div><div class="dayhint" id="hint-visites"></div><div id="list-visites"></div></section>
+  <!-- ANOMALIES -->
+  <section id="anomalies"><h2>Anomalies et incidents</h2><div class="daybar" id="bar-anomalies"></div><div class="dayhint" id="hint-anomalies"></div><div id="list-anomalies"></div></section>
+  <!-- HEURES SUP -->
+  <section id="heures">
+    <h2>Heures supplémentaires</h2>
+    <div class="card accent">
+      <div class="row2">
+        <div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Total cumulé</div><div class="mono" style="font-size:24px;font-weight:700;color:var(--amber)" id="h-total">0h00</div></div>
+        <div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Validées</div><div class="mono" style="font-size:24px;font-weight:700;color:var(--ok)" id="h-valid">0h00</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <div style="font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:1px">Suivi paie</div>
+        <div class="seg"><button id="seg-week" class="on" onclick="setBrk('week')">Semaine</button><button id="seg-month" onclick="setBrk('month')">Mois</button><button id="seg-fourn" onclick="setBrk('fourn')">Fournisseur</button></div>
+      </div>
+      <div id="brk"></div>
+    </div>
+    <div class="card">
+      <div style="font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Registre pour la compta</div>
+      <div class="hint">Sors le détail des heures sup. d'un fournisseur (ou de tous) à transmettre à la compta. Le CSV inclut une colonne en heures décimales et une ligne de total.</div>
+      <label>Fournisseur</label>
+      <select id="reg-fourn"></select>
+      <div class="exprow"><button class="btn sm" onclick="exportRegistre()">Registre CSV</button><button class="btn sm ghost" onclick="printRegistre()">Registre imprimable</button></div>
+    </div>
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:4px 2px 8px;font-weight:600">Détail des saisies</div>
+    <div class="daybar" id="bar-heures"></div><div class="dayhint" id="hint-heures"></div>
+    <div id="list-heures"></div>
+  </section>
+  <!-- MONTAGES -->
+  <section id="montages"><h2>Montages promotionnels</h2><div class="daybar" id="bar-montages"></div><div class="dayhint" id="hint-montages"></div><div id="list-montages"></div></section>
+
+  <!-- ARCHIVES -->
+  <section id="archives">
+    <h2>Archives & sauvegarde</h2>
+    <div class="card">
+      <div style="font-weight:800;margin-bottom:4px">Exporter mes données</div>
+      <div class="hint">Sauvegarde complète (avec photos) à conserver pour t'archiver. Le JSON peut être réimporté ; le CSV s'ouvre dans Excel/Sheets ; le rapport imprimable se transforme en PDF via « Imprimer ».</div>
+      <div class="exprow"><button class="btn sm" onclick="exportJSON()">Sauvegarde JSON</button><button class="btn sm ghost" onclick="exportCSV()">Export CSV</button></div>
+      <button class="btn ghost" onclick="printReport()" style="margin-top:10px">Rapport complet (PDF)</button>
+      <div class="divider"></div>
+      <div style="font-weight:800;margin-bottom:4px">Rapport du jour</div>
+      <div class="hint">Rapport limité aux saisies d'une journée, à envoyer à ton employeur. Choisis la date (aujourd'hui par défaut) puis « Imprimer / Enregistrer en PDF ».</div>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+        <input type="date" id="rep-day" style="flex:1">
+        <button class="btn sm" style="white-space:nowrap" onclick="printReportDay()">Rapport du jour</button>
+      </div>
+      <div class="hint" style="margin-top:14px;color:var(--cream)">Me rappeler de sauvegarder
+        <select id="rem-days" onchange="setReminderDays(this.value)" style="width:auto;display:inline-block;padding:6px 8px;margin-left:4px">
+          <option value="1">chaque jour (fin de journée)</option><option value="3">tous les 3 jours</option><option value="7">tous les 7 jours</option><option value="14">tous les 14 jours</option><option value="30">tous les 30 jours</option>
+        </select>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-weight:800;margin-bottom:4px">Photos sur le téléphone</div>
+      <div class="hint">Enregistre tes photos comme vrais fichiers dans le dossier Téléchargements du téléphone (visibles dans Fichiers, sauvegardés par ta sauvegarde Google le cas échéant). Le ZIP regroupe toutes les photos, nommées par date et magasin.</div>
+      <button class="btn sm" onclick="exportPhotosZip()" style="margin-top:10px;width:100%">Télécharger les photos (ZIP)</button>
+      <label style="display:flex;align-items:center;gap:10px;margin-top:14px;text-transform:none;letter-spacing:0;font-size:13.5px;color:var(--cream)">
+        <input type="checkbox" id="set-autosave" onchange="toggleAutosave(this.checked)" style="width:auto;margin:0">
+        Enregistrer chaque nouvelle photo directement sur le téléphone
+      </label>
+      <div class="hint" style="margin-top:6px">Quand c'est activé, chaque photo prise est aussi téléchargée aussitôt sur le téléphone, en plus d'être conservée dans l'appli.</div>
+    </div>
+    <div class="card">
+      <div style="font-weight:800;margin-bottom:4px">Restaurer une sauvegarde</div>
+      <div class="hint">Recharge un fichier JSON exporté précédemment (remplace les données actuelles).</div>
+      <input type="file" id="importFile" accept="application/json,.json" style="margin-top:10px">
+    </div>
+    <div class="card">
+      <div style="font-weight:800;margin-bottom:4px">Confidentialité (RGPD)</div>
+      <div class="hint">Où sont tes données, ce qu'elles contiennent, et tes droits. À lire avant de partager un export.</div>
+      <button class="btn sm ghost" onclick="openPrivacy()" style="margin-top:10px;width:100%">Lire la note de confidentialité</button>
+    </div>
+    <div class="card">
+      <div style="font-weight:800;margin-bottom:4px;color:var(--danger)">Zone sensible</div>
+      <button class="btn danger" onclick="wipeAll()">Tout effacer</button>
+    </div>
+  </section>
+</main>
+
+<button class="fab" id="fab" onclick="openAdd()">+</button>
+
+<nav>
+  <button class="on" data-s="dash"><span class="ic">▤</span>Synthèse</button>
+  <button data-s="visites"><span class="ic">⌂</span>Visites</button>
+  <button data-s="anomalies"><span class="ic">⚠</span>Anomalies</button>
+  <button data-s="heures"><span class="ic">⏱</span>Heures sup.</button>
+  <button data-s="montages"><span class="ic">▦</span>Montages</button>
+  <button data-s="archives"><span class="ic">⤓</span>Archives</button>
+</nav>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="sheet">
+    <div class="grabber"></div>
+    <div class="hd"><h3 id="m-title">Nouvelle entrée</h3><button class="closeb" onclick="closeModal()">×</button></div>
+    <div id="m-body"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------- STATE ---------- */
+var KEY="merchtrack_v1";
+var state={visites:[],anomalies:[],heures:[],montages:[],magasins:[],settings:{}};
+var draftPhotos=[];        // photos for the entry being created/edited
+var draftFourn=[];         // suppliers handled during the current visit
+var pickCands=[];          // current supplier candidates shown in the picker
+var editing=null;          // {type,id} when editing
+var rec=null,recTarget=null;
+
+function load(){
+  try{var raw=localStorage.getItem(KEY);if(raw)state=Object.assign(state,JSON.parse(raw));}catch(e){}
+}
+function save(){
+  try{localStorage.setItem(KEY,JSON.stringify(state));}
+  catch(e){toast("⚠ Stockage plein — exporte puis allège tes photos");}
+  renderAll();
+}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+function toast(t){var el=document.getElementById("toast");el.textContent=t;el.classList.add("show");setTimeout(function(){el.classList.remove("show")},2200);}
+
+/* ---------- TIME HELPERS ---------- */
+function todayISO(){var d=new Date();return d.toISOString().slice(0,10);}
+function nowHM(){var d=new Date();return ("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);}
+function diffMin(a,b){ // "HH:MM" -> minutes, handles crossing midnight
+  if(!a||!b)return 0;
+  var pa=a.split(":"),pb=b.split(":");
+  var ma=+pa[0]*60+ +pa[1], mb=+pb[0]*60+ +pb[1];
+  var d=mb-ma; if(d<0)d+=1440; return d;
+}
+function fmtMin(m){m=Math.round(m);var h=Math.floor(m/60),mm=m%60;return h+"h"+("0"+mm).slice(-2);}
+function frDate(iso){if(!iso)return"";var p=iso.split("-");return p[2]+"/"+p[1]+"/"+p[0];}
+var JOURS=["dim.","lun.","mar.","mer.","jeu.","ven.","sam."];
+function frDateLong(iso){if(!iso)return"";var d=new Date(iso+"T00:00:00");return JOURS[d.getDay()]+" "+frDate(iso);}
+function monthLabel(iso){if(!iso)return"Sans date";var m=+iso.slice(5,7)-1;return MOIS[m].charAt(0).toUpperCase()+MOIS[m].slice(1)+" "+iso.slice(0,4);}
+function byDateDesc(arr){return arr.slice().sort(function(a,b){var d=(b.date||"").localeCompare(a.date||"");return d!==0?d:(b.ts||0)-(a.ts||0);});}
+function renderGrouped(boxId,arr,rowFn,emptyTxt){
+  var box=document.getElementById(boxId);if(!box)return;
+  if(!arr.length){box.innerHTML=empty(emptyTxt);return;}
+  var sorted=byDateDesc(arr),cur=null,html="";
+  sorted.forEach(function(it){var mk=(it.date||"").slice(0,7);
+    if(mk!==cur){cur=mk;html+='<div class="mhead">'+monthLabel(it.date)+'</div>';}
+    html+=rowFn(it);
+  });
+  box.innerHTML=html;
+}
+function sameMonth(iso){var d=new Date();return iso&&iso.slice(0,7)===d.toISOString().slice(0,7);}
+
+/* ---------- TABS ---------- */
+document.querySelectorAll("nav button").forEach(function(b){
+  b.onclick=function(){
+    document.querySelectorAll("nav button").forEach(function(x){x.classList.remove("on")});
+    b.classList.add("on");
+    document.querySelectorAll("section").forEach(function(s){s.classList.remove("active")});
+    document.getElementById(b.dataset.s).classList.add("active");
+    document.getElementById("fab").style.display=(b.dataset.s==="dash"||b.dataset.s==="archives")?"none":"flex";
+    window.scrollTo(0,0);
+  };
+});
+function currentTab(){var on=document.querySelector("nav button.on");return on?on.dataset.s:"dash";}
+
+/* ---------- VOICE (Web Speech API, gratuit, local) ---------- */
+var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+function toggleMic(btn,targetId){
+  if(!SR){toast("Dictée non supportée par ce navigateur");return;}
+  if(rec){rec.stop();return;}
+  var ta=document.getElementById(targetId);
+  rec=new SR();rec.lang="fr-FR";rec.continuous=true;rec.interimResults=true;
+  var base=ta.value?ta.value+" ":"";
+  recTarget=btn;btn.classList.add("rec");
+  rec.onresult=function(e){
+    var fin="",intm="";
+    for(var i=e.resultIndex;i<e.results.length;i++){
+      if(e.results[i].isFinal)fin+=e.results[i][0].transcript;else intm+=e.results[i][0].transcript;
+    }
+    if(fin)base+=fin+" ";
+    ta.value=base+intm;
+  };
+  rec.onend=function(){btn.classList.remove("rec");rec=null;};
+  rec.onerror=function(){btn.classList.remove("rec");rec=null;toast("Micro indisponible (autorise le micro)");};
+  rec.start();
+}
+
+/* ---------- PHOTOS (IndexedDB : grande capacité, anti-perte) ---------- */
+var DB=null, photoStore={}; // id -> dataURL (cache mémoire)
+function idbAvailable(){try{return !!window.indexedDB;}catch(e){return false;}}
+function idbOpen(cb){
+  if(!idbAvailable()){cb&&cb();return;}
+  try{
+    var req=indexedDB.open("merchtrack_db",1);
+    req.onupgradeneeded=function(e){var db=e.target.result;if(!db.objectStoreNames.contains("photos"))db.createObjectStore("photos");};
+    req.onsuccess=function(e){DB=e.target.result;cb&&cb();};
+    req.onerror=function(){cb&&cb();};
+  }catch(e){cb&&cb();}
+}
+function idbPut(id,data){if(!DB)return;try{DB.transaction("photos","readwrite").objectStore("photos").put(data,id);}catch(e){}}
+function idbDelete(id){if(!DB)return;try{DB.transaction("photos","readwrite").objectStore("photos").delete(id);}catch(e){}}
+function idbLoadAll(cb){
+  photoStore={};
+  if(!DB){cb&&cb();return;}
+  try{
+    var cur=DB.transaction("photos","readonly").objectStore("photos").openCursor();
+    cur.onsuccess=function(e){var c=e.target.result;if(c){photoStore[c.key]=c.value;c.continue();}else{cb&&cb();}};
+    cur.onerror=function(){cb&&cb();};
+  }catch(e){cb&&cb();}
+}
+function isData(p){return typeof p==="string"&&p.slice(0,5)==="data:";}
+function resolvePhoto(p){return isData(p)?p:(photoStore[p]||"");}
+function commitPhoto(data){
+  if(DB){var id="p_"+uid();photoStore[id]=data;idbPut(id,data);return id;}
+  return data; // repli : base64 inline si IndexedDB indisponible
+}
+function commitDraftPhotos(orig){
+  var ids=draftPhotos.map(function(p){return p.id||commitPhoto(p.data);});
+  if(orig&&orig.photos)orig.photos.forEach(function(op){if(!isData(op)&&ids.indexOf(op)<0)idbDelete(op);});
+  return ids;
+}
+function migratePhotos(){
+  if(!DB)return;var dirty=false;
+  ["visites","anomalies","montages"].forEach(function(t){
+    (state[t]||[]).forEach(function(x){
+      if(x.photos&&x.photos.length)x.photos=x.photos.map(function(p){
+        if(isData(p)){dirty=true;var id="p_"+uid();photoStore[id]=p;idbPut(id,p);return id;}
+        return p;
+      });
+    });
+  });
+  if(dirty)try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}
+}
+
+function pickPhoto(){var i=document.getElementById("photoInput");i.value="";i.click();}
+function pickGallery(){var i=document.getElementById("galleryInput");i.value="";i.click();}
+function onPhoto(ev,fromCamera){
+  var files=ev.target.files;if(!files||!files.length)return;
+  Array.prototype.forEach.call(files,function(f){
+    var rd=new FileReader();
+    rd.onload=function(){
+      var img=new Image();
+      img.onload=function(){
+        var max=1100,w=img.width,h=img.height;
+        if(w>h&&w>max){h=h*max/w;w=max;}else if(h>max){w=w*max/h;h=max;}
+        var c=document.createElement("canvas");c.width=w;c.height=h;
+        c.getContext("2d").drawImage(img,0,0,w,h);
+        var data=c.toDataURL("image/jpeg",0.55);
+        draftPhotos.push({id:null,data:data});
+        if(fromCamera&&state.settings&&state.settings.autoSavePhone)downloadSinglePhoto("merch_"+Date.now()+".jpg",data);
+        renderDraftPhotos();
+      };
+      img.src=rd.result;
+    };
+    rd.readAsDataURL(f);
+  });
+}
+function renderDraftPhotos(){
+  var box=document.getElementById("draftPhotos");if(!box)return;
+  var html="";
+  draftPhotos.forEach(function(p,i){html+='<div class="ph"><img src="'+(p.data||resolvePhoto(p.id))+'"><button class="x" onclick="rmDraft('+i+')">×</button></div>';});
+  html+='<button class="addph" onclick="pickPhoto()">📷<span>Photo</span></button>';
+  html+='<button class="addph" onclick="pickGallery()">🖼<span>Galerie</span></button>';
+  box.innerHTML=html;
+}
+function rmDraft(i){draftPhotos.splice(i,1);renderDraftPhotos();}
+
+/* ---------- FORM TEMPLATES ---------- */
+function micField(id,label,ph){
+  return '<label>'+label+'</label><div class="field-mic"><textarea id="'+id+'" placeholder="'+ph+'"></textarea>'+
+         '<button type="button" class="micbtn" title="Dictée vocale" onclick="toggleMic(this,\''+id+'\')">🎙</button></div>';
+}
+var FORMS={
+  visites:function(){return ''+
+    '<label>Date de l\'intervention</label><input type="date" id="f-date" value="'+todayISO()+'">'+
+    '<label>Point de vente</label><input id="f-magasin" list="magasin-list" placeholder="Enseigne — ex. Carrefour Sainte-Clotilde"><datalist id="magasin-list"></datalist>'+
+    '<label>Commune</label><input id="f-ville" placeholder="Ville">'+
+    '<label>Fournisseurs traités lors de cette visite</label><div id="fournPick" class="pickwrap"></div>'+
+    '<div class="row2"><div><label>Heure d\'arrivée</label><input type="time" id="f-arr" value="'+nowHM()+'"></div>'+
+    '<div><label>Heure de départ</label><input type="time" id="f-dep"></div></div>'+
+    '<label>Résultat de l\'intervention</label><select id="f-statut"><option>Réalisée</option><option>Réalisée partiellement</option><option>Reportée</option><option>Accès refusé</option></select>'+
+    micField("f-notes","Compte rendu","Rayon traité, état du linéaire, interlocuteur rencontré…")+
+    photoBlock();},
+  anomalies:function(){return ''+
+    '<label>Date du constat</label><input type="date" id="f-date" value="'+todayISO()+'">'+
+    '<label>Point de vente concerné</label><input id="f-magasin" list="magasin-list" placeholder="Enseigne et commune"><datalist id="magasin-list"></datalist>'+
+    '<label>Fournisseur à informer</label><input id="f-fourn" list="fourn-list" placeholder="Fournisseur concerné par la remontée"><datalist id="fourn-list"></datalist>'+
+    '<label>Nature de l\'incident</label><select id="f-type"><option>Rupture de stock</option><option>Marchandise non livrée</option><option>Refus du point de vente</option><option>Accès refusé</option><option>Matériel défectueux</option><option>Linéaire dégradé</option><option>Autre</option></select>'+
+    '<label>Niveau de gravité</label><select id="f-grav"><option>Mineur</option><option>Modéré</option><option>Critique</option></select>'+
+    micField("f-desc","Description détaillée","Faits constatés, horaire, interlocuteur concerné…")+
+    photoBlock();},
+  heures:function(){return ''+
+    '<label>Date</label><input type="date" id="f-date" value="'+todayISO()+'">'+
+    '<label>Point de vente / mission</label><input id="f-magasin" list="magasin-list" placeholder="Lieu de la prestation"><datalist id="magasin-list"></datalist>'+
+    '<label>Fournisseur (donneur d\'ordre)</label><input id="f-fourn" list="fourn-list" placeholder="Fournisseur prenant en charge ces heures"><datalist id="fourn-list"></datalist>'+
+    '<div class="row2"><div><label>Heure de début</label><input type="time" id="f-deb"></div>'+
+    '<div><label>Heure de fin</label><input type="time" id="f-fin"></div></div>'+
+    '<div class="hint" id="f-calc">La durée est calculée automatiquement.</div>'+
+    micField("f-motif","Motif de la prestation","Nature de la mission et personne ayant sollicité ces heures")+
+    '<label>Statut de validation</label><select id="f-valid"><option value="0">En attente de validation</option><option value="1">Validée</option></select>';},
+  montages:function(){return ''+
+    '<label>Date</label><input type="date" id="f-date" value="'+todayISO()+'">'+
+    '<label>Point de vente</label><input id="f-magasin" list="magasin-list" placeholder="Enseigne et commune"><datalist id="magasin-list"></datalist>'+
+    '<label>Opération promotionnelle</label><input id="f-op" placeholder="Ex. tête de gondole été, PLV marque X">'+
+    '<label>État d\'avancement</label><select id="f-statut"><option>Monté</option><option>En cours</option><option>À démonter</option><option>Démonté</option></select>'+
+    micField("f-desc","Détails de l\'opération","Emplacement, quantités, durée prévue de l\'opération…")+
+    photoBlock();}
+};
+function photoBlock(){return '<label>Photos justificatives</label><div class="photos" id="draftPhotos"></div>';}
+
+/* ---------- ADD / EDIT ---------- */
+function openAdd(){
+  var t=currentTab(); if(t==="dash"||t==="archives")t="visites";
+  openModal(t,null);
+}
+function openModal(type,id){
+  editing={type:type,id:id};draftPhotos=[];draftFourn=[];
+  var titles={visites:"Visite en point de vente",anomalies:"Anomalie / incident",heures:"Heures supplémentaires",montages:"Montage promotionnel"};
+  document.getElementById("m-title").textContent=(id?"Modifier — ":"Nouvelle saisie — ")+titles[type];
+  document.getElementById("m-body").innerHTML=FORMS[type]()+
+    '<button class="btn" onclick="saveEntry()">'+(id?"Enregistrer les modifications":"Enregistrer")+'</button>';
+  // prefill if editing
+  if(id){
+    var item=state[type].filter(function(x){return x.id===id})[0];
+    if(item){fillForm(type,item);draftPhotos=(item.photos||[]).map(function(p){return isData(p)?{id:null,data:p}:{id:p,data:resolvePhoto(p)};});draftFourn=(item.fournisseurs||[]).slice();}
+  }
+  renderDraftPhotos();
+  fillMagasinDatalist();
+  if(type==="visites"){
+    var mgv=document.getElementById("f-magasin");
+    if(mgv)mgv.addEventListener("input",renderFournPick);
+    renderFournPick();
+  }
+  if(type==="heures"||type==="anomalies"){
+    var mg=document.getElementById("f-magasin");
+    if(mg)mg.addEventListener("input",updateFournOptions);
+    updateFournOptions();
+  }
+  if(type==="heures"){
+    ["f-deb","f-fin"].forEach(function(fid){var e=document.getElementById(fid);if(e)e.oninput=updateCalc;});
+  }
+  document.getElementById("modal").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function fillForm(type,it){
+  function set(id,v){var e=document.getElementById(id);if(e!=null&&v!=null)e.value=v;}
+  set("f-magasin",it.magasin);set("f-date",it.date);set("f-ville",it.ville);
+  set("f-arr",it.arr);set("f-dep",it.dep);set("f-statut",it.statut);set("f-notes",it.notes);
+  set("f-grav",it.grav);set("f-type",it.type);set("f-desc",it.desc);
+  set("f-deb",it.deb);set("f-fin",it.fin);set("f-motif",it.motif);set("f-op",it.op);set("f-fourn",it.fourn);
+  if(it.valid!=null)set("f-valid",it.valid?"1":"0");
+  if(type==="heures")updateCalc();
+}
+function updateCalc(){
+  var d=val("f-deb"),f=val("f-fin");var el=document.getElementById("f-calc");
+  if(d&&f)el.textContent="Durée : "+fmtMin(diffMin(d,f));else el.textContent="La durée est calculée automatiquement.";
+}
+function val(id){var e=document.getElementById(id);return e?e.value.trim():"";}
+function saveEntry(){
+  var t=editing.type,id=editing.id;
+  var orig=id?state[t].filter(function(x){return x.id===id;})[0]:null;
+  var item={id:id||uid(),date:val("f-date")||todayISO(),magasin:val("f-magasin"),ts:Date.now()};
+  if(t==="visites"){item.ville=val("f-ville");item.arr=val("f-arr");item.dep=val("f-dep");item.statut=val("f-statut");item.notes=val("f-notes");item.photos=commitDraftPhotos(orig);item.fournisseurs=draftFourn.slice();}
+  if(t==="anomalies"){item.fourn=val("f-fourn");item.grav=val("f-grav");item.type=val("f-type");item.desc=val("f-desc");item.photos=commitDraftPhotos(orig);}
+  if(t==="heures"){item.fourn=val("f-fourn");item.deb=val("f-deb");item.fin=val("f-fin");item.dur=diffMin(item.deb,item.fin);item.motif=val("f-motif");item.valid=val("f-valid")==="1";}
+  if(t==="montages"){item.statut=val("f-statut");item.op=val("f-op");item.desc=val("f-desc");item.photos=commitDraftPhotos(orig);}
+  if(!item.magasin){toast("Renseignez au moins le point de vente");return;}
+  if(id){state[t]=state[t].map(function(x){return x.id===id?item:x;});}
+  else{state[t].unshift(item);}
+  if(listFilter[t]&&listFilter[t].mode==="day")listFilter[t].date=item.date;
+  closeModal();save();toast(id?"Modifications enregistrées":"Saisie enregistrée");
+}
+function closeModal(){if(rec){rec.stop();}document.getElementById("modal").classList.remove("open");document.body.style.overflow="";editing=null;}
+function delEntry(t,id){if(!confirm("Supprimer définitivement cet enregistrement ?"))return;state[t]=state[t].filter(function(x){return x.id!==id;});save();toast("Enregistrement supprimé");}
+
+/* ---------- RENDER LISTS ---------- */
+function photosHtml(ps){if(!ps||!ps.length)return"";var h='<div class="photos">';ps.forEach(function(p){var s=resolvePhoto(p);if(s)h+='<div class="ph"><img src="'+s+'"></div>';});return h+'</div>';}
+function empty(txt){return '<div class="empty"><div class="big">∅</div>'+txt+'</div>';}
+
+function visiteCls(s){return s==="Accès refusé"?"crit":(s==="Reportée"||s==="Réalisée partiellement"?"warnb":"okb");}
+function visiteRow(v){
+  var cls=visiteCls(v.statut);
+  var dur=(v.arr&&v.dep)?" · "+fmtMin(diffMin(v.arr,v.dep)):"";
+  var fourns=(v.fournisseurs&&v.fournisseurs.length)?'<div style="margin-top:6px">'+v.fournisseurs.map(function(f){return '<span class="tag" style="color:var(--amber);border-color:var(--amber);margin:0 5px 4px 0">▸ '+esc(f)+'</span>';}).join("")+'</div>':'';
+  return '<div class="entry '+cls+'"><div class="top"><div><div class="ttl">'+esc(v.magasin)+'</div>'+
+    '<div class="meta">'+frDateLong(v.date)+(v.ville?" · "+esc(v.ville):"")+' · '+(v.arr||"--")+'→'+(v.dep||"--")+dur+'</div>'+fourns+'</div>'+
+    '<span class="tag '+(cls==="okb"?"o":cls==="crit"?"c":"w")+'">'+esc(v.statut||"")+'</span></div>'+
+    (v.notes?'<div class="desc">'+esc(v.notes)+'</div>':'')+photosHtml(v.photos)+acts("visites",v.id)+'</div>';
+}
+function renderVisites(){renderSection("visites");}
+function renderAnomalies(){renderSection("anomalies");}
+function renderHeures(){renderSection("heures");}
+function toggleValid(id){state.heures=state.heures.map(function(h){if(h.id===id)h.valid=!h.valid;return h;});save();}
+function renderMontages(){renderSection("montages");}
+
+/* ---------- AFFICHAGE PAR JOUR / HISTORIQUE ---------- */
+var listFilter={
+  visites:{mode:"day",date:todayISO()},
+  anomalies:{mode:"day",date:todayISO()},
+  heures:{mode:"day",date:todayISO()},
+  montages:{mode:"day",date:todayISO()}
+};
+var SECMETA={
+  visites:{row:visiteRow,emptyDay:"Aucune visite enregistrée pour ce jour.",emptyAll:"Aucune visite enregistrée pour le moment.<br>Appuyez sur + pour créer la première saisie."},
+  anomalies:{row:anomalieRow,emptyDay:"Aucune anomalie pour ce jour.",emptyAll:"Aucune anomalie signalée pour le moment."},
+  heures:{row:heureRow,emptyDay:"Aucune heure supplémentaire pour ce jour.",emptyAll:"Aucune heure supplémentaire enregistrée."},
+  montages:{row:montageRow,emptyDay:"Aucun montage pour ce jour.",emptyAll:"Aucun montage promotionnel enregistré."}
+};
+function renderSection(type){
+  var f=listFilter[type],meta=SECMETA[type],arr=state[type];
+  var today=todayISO();
+  var bar=document.getElementById("bar-"+type);
+  if(bar){
+    var left;
+    if(f.mode==="day"){
+      var dis=f.date>=today?' disabled':'';
+      left='<div class="daynav"><button onclick="stepDay(\''+type+'\',-1)">‹</button>'+
+        '<input type="date" value="'+f.date+'" max="'+today+'" onchange="setDay(\''+type+'\',this.value)">'+
+        '<button onclick="stepDay(\''+type+'\',1)"'+dis+'>›</button></div>';
+    }else{
+      left='<div class="daycount">'+arr.length+' saisie'+(arr.length>1?'s':'')+' au total</div>';
+    }
+    bar.innerHTML=left+'<div class="seg"><button class="'+(f.mode==="day"?"on":"")+'" onclick="setMode(\''+type+'\',\'day\')">Jour</button>'+
+      '<button class="'+(f.mode==="all"?"on":"")+'" onclick="setMode(\''+type+'\',\'all\')">Tout</button></div>';
+  }
+  var hint=document.getElementById("hint-"+type);
+  var box=document.getElementById("list-"+type);
+  if(f.mode==="day"){
+    var items=byDateDesc(arr.filter(function(x){return x.date===f.date;}));
+    var older=arr.length-items.length;
+    if(hint)hint.innerHTML=(f.date===today?"Aujourd'hui — ":"")+frDateLong(f.date)+
+      (older>0?'  ·  '+older+' autre'+(older>1?'s':'')+' saisie'+(older>1?'s':'')+' dans l\'historique (onglet « Tout »)':'');
+    box.innerHTML=items.length?items.map(meta.row).join(""):empty(meta.emptyDay);
+  }else{
+    if(hint)hint.textContent="Historique complet, classé par mois du plus récent au plus ancien.";
+    renderGrouped("list-"+type,arr,meta.row,meta.emptyAll);
+  }
+}
+function setMode(t,m){listFilter[t].mode=m;renderSection(t);}
+function setDay(t,d){if(d)listFilter[t].date=d;renderSection(t);}
+function stepDay(t,delta){var d=new Date(listFilter[t].date+"T00:00:00");d.setDate(d.getDate()+delta);var iso=d.toISOString().slice(0,10);if(iso>todayISO())return;listFilter[t].date=iso;renderSection(t);}
+function anomalieCls(g){return g==="Critique"?"crit":(g==="Modéré"?"warnb":"");}
+function anomalieRow(a){
+  var cls=anomalieCls(a.grav);var tg=cls==="crit"?"c":cls==="warnb"?"w":"";
+  return '<div class="entry '+cls+'"><div class="top"><div><div class="ttl">'+esc(a.type)+'</div>'+
+    '<div class="meta">'+frDateLong(a.date)+' · '+esc(a.magasin)+'</div>'+
+    (a.fourn?'<div style="margin-top:6px"><span class="tag" style="color:var(--amber);border-color:var(--amber)">▸ '+esc(a.fourn)+'</span></div>':'')+'</div>'+
+    '<span class="tag '+tg+'">'+esc(a.grav||"")+'</span></div>'+
+    (a.desc?'<div class="desc">'+esc(a.desc)+'</div>':'')+photosHtml(a.photos)+acts("anomalies",a.id)+'</div>';
+}
+
+function heureRow(h){
+  return '<div class="entry '+(h.valid?"okb":"warnb")+'"><div class="top"><div><div class="ttl mono">'+fmtMin(h.dur||0)+'</div>'+
+    '<div class="meta">'+frDateLong(h.date)+' · '+esc(h.magasin)+' · '+(h.deb||"--")+'→'+(h.fin||"--")+'</div>'+
+    (h.fourn?'<div style="margin-top:6px"><span class="tag" style="color:var(--amber);border-color:var(--amber)">▸ '+esc(h.fourn)+'</span></div>':'')+'</div>'+
+    '<span class="tag '+(h.valid?"o":"w")+'">'+(h.valid?"Validée":"En attente")+'</span></div>'+
+    (h.motif?'<div class="desc">'+esc(h.motif)+'</div>':'')+
+    '<div class="acts"><button class="iconbtn" onclick="toggleValid(\''+h.id+'\')">'+(h.valid?"↩ Repasser en attente":"✓ Valider")+'</button>'+
+    '<button class="iconbtn" onclick="openModal(\'heures\',\''+h.id+'\')">✎ Modifier</button>'+
+    '<button class="iconbtn" onclick="delEntry(\'heures\',\''+h.id+'\')">🗑 Supprimer</button></div></div>';
+}
+
+function montageRow(m){
+  return '<div class="entry okb"><div class="top"><div><div class="ttl">'+esc(m.op||"Montage promotionnel")+'</div>'+
+    '<div class="meta">'+frDateLong(m.date)+' · '+esc(m.magasin)+'</div></div>'+
+    '<span class="tag o">'+esc(m.statut||"")+'</span></div>'+
+    (m.desc?'<div class="desc">'+esc(m.desc)+'</div>':'')+photosHtml(m.photos)+acts("montages",m.id)+'</div>';
+}
+
+function acts(t,id){return '<div class="acts"><button class="iconbtn" onclick="openModal(\''+t+'\',\''+id+'\')">✎ Modifier</button>'+
+  '<button class="iconbtn" onclick="delEntry(\''+t+'\',\''+id+'\')">🗑 Supprimer</button></div>';}
+function esc(s){return (s||"").replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+/* ---------- DASHBOARD ---------- */
+function renderDash(){
+  document.getElementById("s-visits").textContent=state.visites.length;
+  document.getElementById("s-anom").textContent=state.anomalies.length;
+  document.getElementById("s-montage").textContent=state.montages.length;
+  var tot=state.heures.reduce(function(a,h){return a+(h.dur||0);},0);
+  var mon=state.heures.filter(function(h){return sameMonth(h.date);}).reduce(function(a,h){return a+(h.dur||0);},0);
+  var pend=state.heures.filter(function(h){return !h.valid;}).reduce(function(a,h){return a+(h.dur||0);},0);
+  var vald=state.heures.filter(function(h){return h.valid;}).reduce(function(a,h){return a+(h.dur||0);},0);
+  document.getElementById("s-hsup").textContent=fmtMin(tot);
+  document.getElementById("s-hsup-month").textContent=fmtMin(mon);
+  document.getElementById("s-hsup-pending").textContent=fmtMin(pend);
+  document.getElementById("h-total").textContent=fmtMin(tot);
+  document.getElementById("h-valid").textContent=fmtMin(vald);
+  // storage
+  var ms=document.getElementById("s-magasins");if(ms)ms.textContent=state.magasins.length;
+  var np=0;["visites","anomalies","montages"].forEach(function(t){state[t].forEach(function(x){np+=(x.photos||[]).length;});});
+  var sp=document.getElementById("s-photos");if(sp)sp.textContent=np+" photo"+(np>1?"s":"");
+  var fw=document.getElementById("s-filewarn");
+  if(fw){
+    if(typeof location!=="undefined"&&location.protocol==="file:"){fw.style.display="block";fw.textContent="⚠ Mode fichier local : le navigateur peut effacer ces données à tout moment et la protection anti-purge ne s'applique pas. Hébergez l'appli (GitHub Pages) et exportez régulièrement vos sauvegardes.";}
+    else fw.style.display="none";
+  }
+  updateStorageReadout();
+}
+function fmtBytes(b){if(b>=1073741824)return (b/1073741824).toFixed(1)+" Go";if(b>=1048576)return Math.round(b/1048576)+" Mo";return Math.max(1,Math.round(b/1024))+" Ko";}
+function updateStorageReadout(){
+  try{
+    if(navigator.storage&&navigator.storage.estimate){
+      navigator.storage.estimate().then(function(e){
+        var u=e.usage||0,q=e.quota||0;var el=document.getElementById("s-usage");
+        if(el)el.textContent=fmtBytes(u)+(q?" utilisés sur ~"+fmtBytes(q)+" dispo":" utilisés");
+      });
+    }else{var el=document.getElementById("s-usage");if(el)el.textContent="—";}
+    if(navigator.storage&&navigator.storage.persisted){
+      navigator.storage.persisted().then(function(p){var el=document.getElementById("s-persist");if(el)el.textContent=p?"active ✓":"non garantie (installez l'appli)";});
+    }else{var el2=document.getElementById("s-persist");if(el2)el2.textContent="non disponible";}
+  }catch(e){}
+}
+function renderAll(){renderDash();renderVisites();renderAnomalies();renderHeures();renderMontages();renderBreakdown();renderRegSelect();syncSettingsUI();renderBackupAlert();}
+
+/* ---------- RÉPERTOIRE MAGASINS / FOURNISSEURS ---------- */
+function uniqSort(arr){var set={},out=[];arr.forEach(function(v){if(v&&!set[v.toLowerCase()]){set[v.toLowerCase()]=1;out.push(v);}});out.sort(function(a,b){return a.toLowerCase()<b.toLowerCase()?-1:1;});return out;}
+function magasinList(){
+  var arr=[];
+  state.magasins.forEach(function(m){if(m.nom)arr.push(m.nom);});
+  ["visites","anomalies","heures","montages"].forEach(function(t){state[t].forEach(function(x){if(x.magasin)arr.push(x.magasin);});});
+  return uniqSort(arr);
+}
+function allFournisseurs(){
+  var arr=[];
+  state.magasins.forEach(function(m){(m.fournisseurs||[]).forEach(function(f){arr.push(f);});});
+  state.heures.forEach(function(h){if(h.fourn)arr.push(h.fourn);});
+  state.anomalies.forEach(function(a){if(a.fourn)arr.push(a.fourn);});
+  return uniqSort(arr);
+}
+function findMagasin(nom){if(!nom)return null;nom=nom.toLowerCase().trim();return state.magasins.filter(function(m){return (m.nom||"").toLowerCase().trim()===nom;})[0]||null;}
+function fournisseursForStore(nom){var m=findMagasin(nom);return m&&m.fournisseurs?m.fournisseurs.slice():[];}
+function fillMagasinDatalist(){
+  var dl=document.getElementById("magasin-list");if(!dl)return;
+  dl.innerHTML=magasinList().map(function(m){return '<option value="'+esc(m)+'">';}).join("");
+}
+function updateFournOptions(){
+  var dl=document.getElementById("fourn-list");if(!dl)return;
+  var mg=document.getElementById("f-magasin");var store=mg?mg.value:"";
+  var list=fournisseursForStore(store);
+  if(!list.length)list=allFournisseurs();
+  dl.innerHTML=uniqSort(list).map(function(f){return '<option value="'+esc(f)+'">';}).join("");
+}
+/* sélection multiple des fournisseurs traités lors d'une visite */
+function renderFournPick(){
+  var box=document.getElementById("fournPick");if(!box)return;
+  var mg=document.getElementById("f-magasin");var store=mg?mg.value:"";
+  var cands=fournisseursForStore(store);
+  draftFourn.forEach(function(f){if(!cands.some(function(c){return c.toLowerCase()===f.toLowerCase();}))cands.push(f);});
+  pickCands=uniqSort(cands);
+  var h="";
+  if(!pickCands.length)h+='<div class="picknone">Choisissez le point de vente pour voir ses fournisseurs, ou ajoutez-en un ci-dessous.</div>';
+  pickCands.forEach(function(f,i){
+    var on=draftFourn.some(function(x){return x.toLowerCase()===f.toLowerCase();});
+    h+='<button type="button" class="pchip'+(on?' on':'')+'" onclick="toggleFourn('+i+')">'+(on?'✓ ':'')+esc(f)+'</button>';
+  });
+  h+='<div class="pickadd"><input id="fourn-add" placeholder="Autre fournisseur traité…" onkeydown="if(event.key===\'Enter\'){event.preventDefault();addDraftFourn();}"><button type="button" class="iconbtn" onclick="addDraftFourn()">+ Ajouter</button></div>';
+  box.innerHTML=h;
+}
+function toggleFourn(i){
+  var f=pickCands[i];if(!f)return;
+  var pos=-1;for(var k=0;k<draftFourn.length;k++){if(draftFourn[k].toLowerCase()===f.toLowerCase()){pos=k;break;}}
+  if(pos>=0)draftFourn.splice(pos,1);else draftFourn.push(f);
+  renderFournPick();
+}
+function addDraftFourn(){
+  var inp=document.getElementById("fourn-add");var f=(inp&&inp.value||"").trim();if(!f)return;
+  if(!draftFourn.some(function(x){return x.toLowerCase()===f.toLowerCase();}))draftFourn.push(f);
+  renderFournPick();
+}
+function renderRegSelect(){
+  var sel=document.getElementById("reg-fourn");if(!sel)return;
+  var cur=sel.value;
+  var hasNone=state.heures.some(function(h){return !h.fourn;});
+  var opts='<option value="">Tous les fournisseurs</option>';
+  allFournisseurs().forEach(function(f){opts+='<option value="'+esc(f)+'">'+esc(f)+'</option>';});
+  if(hasNone)opts+='<option value="__none__">Sans fournisseur</option>';
+  sel.innerHTML=opts;sel.value=cur;
+}
+/* ---------- GESTION DU RÉPERTOIRE (modal) ---------- */
+function openDirectory(){
+  editing=null;
+  document.getElementById("m-title").textContent="Magasins & fournisseurs";
+  renderDirectory();
+  document.getElementById("modal").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function openPrivacy(){
+  editing=null;
+  document.getElementById("m-title").textContent="Confidentialité (RGPD)";
+  var h='';
+  h+='<div class="hint" style="line-height:1.6">';
+  h+='<p><b>Où sont stockées les données.</b> Tout (saisies, photos) reste uniquement dans le navigateur de cet appareil (stockage local et IndexedDB). Aucune donnée n\'est envoyée à un serveur. L\'hébergeur sert seulement le programme de l\'appli ; il peut conserver des journaux techniques (ex. adresse IP) pour le fonctionnement du site, sans accès à tes saisies.</p>';
+  h+='<p><b>Ce que peuvent contenir ces données.</b> Des informations professionnelles, mais aussi des données personnelles de tiers : noms d\'interlocuteurs, et éventuellement des personnes visibles sur les photos. Ces informations sont protégées par le RGPD.</p>';
+  h+='<p><b>Finalité.</b> Tenir un registre fidèle de ton activité et te constituer une preuve en cas de litige avec un employeur ou un fournisseur.</p>';
+  h+='<p><b>Minimisation.</b> N\'enregistre que ce qui est utile à cette finalité. Évite les photos de personnes identifiables si ce n\'est pas nécessaire ; informe la personne quand c\'est possible.</p>';
+  h+='<p><b>Conservation.</b> Tu maîtrises la durée. Supprime les saisies qui ne sont plus utiles (chaque fiche est effaçable, ou « Tout effacer »).</p>';
+  h+='<p><b>Tes outils RGPD intégrés.</b> Export JSON = portabilité des données ; « Tout effacer » = droit à l\'effacement ; aucun partage n\'est automatique, tu choisis quand et à qui transmettre un export.</p>';
+  h+='<p><b>Sécurité.</b> Active le verrouillage d\'écran et le chiffrement de l\'appareil (le vrai rempart si le téléphone est perdu). Ne transmets les exports qu\'aux personnes habilitées, par un canal sûr.</p>';
+  h+='<p style="color:var(--faint)">Cette note est une information, pas un avis juridique. Si l\'outil est un jour partagé entre plusieurs personnes ou sociétés, une politique de confidentialité formelle et un encadrement juridique (contrat avec l\'hébergeur, base légale, durées) deviendront nécessaires.</p>';
+  h+='</div>';
+  document.getElementById("m-body").innerHTML=h;
+  document.getElementById("modal").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function renderDirectory(){
+  var body=document.getElementById("m-body");
+  var h='<div class="hint">Enregistrez vos points de vente et les fournisseurs qui y interviennent. Ces fournisseurs seront proposés automatiquement lors d\'une demande d\'heures supplémentaires ou d\'une remontée d\'anomalie.</div>';
+  h+='<div class="card2"><label>Nouveau point de vente</label><input id="dir-nom" placeholder="Enseigne — ex. Carrefour Sainte-Clotilde"><input id="dir-ville" placeholder="Commune (facultatif)" style="margin-top:8px"><button class="btn sm" style="margin-top:10px;width:100%" onclick="addMagasin()">Ajouter le magasin</button></div>';
+  if(!state.magasins.length){
+    h+='<div class="empty" style="padding:22px 10px"><div class="big">▦</div>Aucun magasin enregistré pour le moment.</div>';
+  }else{
+    var sorted=state.magasins.slice().sort(function(a,b){return (a.nom||"").toLowerCase()<(b.nom||"").toLowerCase()?-1:1;});
+    sorted.forEach(function(m){
+      h+='<div class="dirstore"><div class="dirhd">'+
+         '<input class="dirnom" value="'+esc(m.nom||"")+'" onchange="updateMagasin(\''+m.id+'\',\'nom\',this.value)" placeholder="Nom du magasin">'+
+         '<button class="iconbtn" onclick="delMagasin(\''+m.id+'\')">🗑</button></div>'+
+         '<input class="dirville" value="'+esc(m.ville||"")+'" onchange="updateMagasin(\''+m.id+'\',\'ville\',this.value)" placeholder="Commune">'+
+         '<div class="dirlbl">Fournisseurs intervenant ici</div>'+
+         '<div class="chips">';
+      (m.fournisseurs||[]).forEach(function(f,i){h+='<span class="chip">'+esc(f)+'<button onclick="removeFourn(\''+m.id+'\','+i+')">×</button></span>';});
+      if(!(m.fournisseurs||[]).length)h+='<span class="chipmuted">aucun fournisseur</span>';
+      h+='</div><div class="addfourn"><input id="dir-add-'+m.id+'" placeholder="Ajouter un fournisseur" onkeydown="if(event.key===\'Enter\')addFourn(\''+m.id+'\')"><button class="iconbtn" onclick="addFourn(\''+m.id+'\')">+ Ajouter</button></div>'+
+         '</div>';
+    });
+  }
+  body.innerHTML=h;
+}
+function addMagasin(){
+  var nom=(document.getElementById("dir-nom").value||"").trim();
+  var ville=(document.getElementById("dir-ville").value||"").trim();
+  if(!nom){toast("Indiquez le nom du magasin");return;}
+  if(findMagasin(nom)){toast("Ce magasin existe déjà");return;}
+  state.magasins.push({id:uid(),nom:nom,ville:ville,fournisseurs:[]});
+  persistDir();renderDirectory();toast("Magasin ajouté");
+}
+function updateMagasin(id,field,value){
+  state.magasins=state.magasins.map(function(m){if(m.id===id)m[field]=(value||"").trim();return m;});
+  persistDir();
+}
+function delMagasin(id){
+  var m=state.magasins.filter(function(x){return x.id===id;})[0];
+  if(!confirm("Supprimer le magasin « "+((m&&m.nom)||"")+" » du répertoire ?\n(Vos saisies existantes ne sont pas effacées.)"))return;
+  state.magasins=state.magasins.filter(function(x){return x.id!==id;});
+  persistDir();renderDirectory();toast("Magasin supprimé");
+}
+function addFourn(id){
+  var inp=document.getElementById("dir-add-"+id);var f=(inp&&inp.value||"").trim();
+  if(!f)return;
+  state.magasins=state.magasins.map(function(m){
+    if(m.id===id){m.fournisseurs=m.fournisseurs||[];
+      if(!m.fournisseurs.some(function(x){return x.toLowerCase()===f.toLowerCase();}))m.fournisseurs.push(f);}
+    return m;});
+  persistDir();renderDirectory();
+}
+function removeFourn(id,i){
+  state.magasins=state.magasins.map(function(m){if(m.id===id&&m.fournisseurs)m.fournisseurs.splice(i,1);return m;});
+  persistDir();renderDirectory();
+}
+function persistDir(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){toast("⚠ Stockage plein");}renderDash();renderRegSelect();}
+
+function regFilter(){
+  var sel=document.getElementById("reg-fourn");var f=sel?sel.value:"";
+  return state.heures.filter(function(h){
+    if(f==="")return true;
+    if(f==="__none__")return !h.fourn;
+    return h.fourn===f;
+  }).sort(function(a,b){return (a.date||"")<(b.date||"")?-1:1;});
+}
+function dec(min){return (min/60).toFixed(2).replace(".",",");}
+function safeName(s){return (s||"tous").replace(/[^a-zA-Z0-9_-]+/g,"-").toLowerCase();}
+function exportRegistre(){
+  var sel=document.getElementById("reg-fourn");var fname=sel?(sel.options[sel.selectedIndex]||{}).text:"Tous";
+  var list=regFilter();
+  if(!list.length){toast("Aucune heure sup. pour ce fournisseur");return;}
+  var rows=[["Date","Fournisseur","Magasin","Debut","Fin","Duree","Heures (decimal)","Statut","Motif"]];
+  var tot=0;
+  list.forEach(function(h){tot+=h.dur||0;
+    rows.push([frDate(h.date),h.fourn||"(sans fournisseur)",h.magasin||"",h.deb||"",h.fin||"",fmtMin(h.dur||0),dec(h.dur||0),h.valid?"Validee":"En attente",(h.motif||"").replace(/\n/g," ")]);
+  });
+  rows.push([]);
+  rows.push(["TOTAL","","","","",fmtMin(tot),dec(tot),"",""]);
+  var csv=rows.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"';}).join(";");}).join("\r\n");
+  dl("registre-hsup-"+safeName(fname)+"-"+stamp()+".csv","\uFEFF"+csv,"text/csv");
+  toast("Registre exporté ✓");
+}
+function printRegistre(){
+  var sel=document.getElementById("reg-fourn");var fname=sel?(sel.options[sel.selectedIndex]||{}).text:"Tous";
+  var list=regFilter();
+  if(!list.length){toast("Aucune heure sup. pour ce fournisseur");return;}
+  var tot=0,val=0;list.forEach(function(h){tot+=h.dur||0;if(h.valid)val+=h.dur||0;});
+  var css='body{font-family:Arial,sans-serif;color:#111;margin:24px;font-size:12px}h1{font-size:18px}table{width:100%;border-collapse:collapse;margin-top:10px}td,th{border:1px solid #ccc;padding:6px;text-align:left}th{background:#f0f0f0}tfoot td{font-weight:bold;background:#f7f7f7}';
+  var w=window.open("","_blank");
+  var html='<html><head><meta charset="utf-8"><title>Registre HSup</title><style>'+css+'</style></head><body>';
+  html+='<h1>Registre des heures supplémentaires</h1>';
+  html+='<p><b>Fournisseur :</b> '+esc(fname)+'<br><b>Édité le :</b> '+frDate(stamp())+'<br><b>Total :</b> '+fmtMin(tot)+' ('+dec(tot)+' h) — dont validées : '+fmtMin(val)+'</p>';
+  html+='<table><tr><th>Date</th><th>Fournisseur</th><th>Magasin</th><th>Horaires</th><th>Durée</th><th>Heures</th><th>Statut</th><th>Motif</th></tr>';
+  list.forEach(function(h){html+='<tr><td>'+frDate(h.date)+'</td><td>'+esc(h.fourn||"—")+'</td><td>'+esc(h.magasin||"")+'</td><td>'+(h.deb||"")+"–"+(h.fin||"")+'</td><td>'+fmtMin(h.dur||0)+'</td><td>'+dec(h.dur||0)+'</td><td>'+(h.valid?"Validée":"En attente")+'</td><td>'+esc(h.motif||"")+'</td></tr>';});
+  html+='<tfoot><tr><td colspan="4">TOTAL</td><td>'+fmtMin(tot)+'</td><td>'+dec(tot)+'</td><td colspan="2"></td></tr></tfoot></table>';
+  html+='<p style="margin-top:30px">Signature / visa : ______________________</p>';
+  html+='</body></html>';
+  w.document.write(html);w.document.close();setTimeout(function(){w.print();},400);
+}
+
+/* ---------- BREAKDOWN PAR SEMAINE / MOIS ---------- */
+var MOIS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+var brkMode="week";
+function setBrk(m){brkMode=m;
+  ["week","month","fourn"].forEach(function(k){document.getElementById("seg-"+k).classList.toggle("on",m===k);});
+  renderBreakdown();
+}
+function isoWeek(d){
+  var t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));
+  var day=t.getUTCDay()||7;t.setUTCDate(t.getUTCDate()+4-day);
+  var ys=new Date(Date.UTC(t.getUTCFullYear(),0,1));
+  var wk=Math.ceil((((t-ys)/86400000)+1)/7);
+  return {year:t.getUTCFullYear(),week:wk};
+}
+function mondayOf(iso){var d=new Date(iso+"T00:00:00");var day=d.getDay()||7;d.setDate(d.getDate()-(day-1));return d;}
+function dm(d){return ("0"+d.getDate()).slice(-2)+"/"+("0"+(d.getMonth()+1)).slice(-2);}
+function renderBreakdown(){
+  var box=document.getElementById("brk");if(!box)return;
+  if(!state.heures.length){box.innerHTML='<div style="color:var(--faint);font-size:13px;padding:6px 0">Aucune heure sup. à totaliser pour l\'instant.</div>';return;}
+  var groups={};
+  state.heures.forEach(function(h){
+    if(!h.date)return;var key,label,sub;
+    if(brkMode==="week"){
+      var w=isoWeek(new Date(h.date+"T00:00:00"));
+      key=w.year+"-W"+("0"+w.week).slice(-2);
+      var mon=mondayOf(h.date);var sun=new Date(mon);sun.setDate(sun.getDate()+6);
+      label="Semaine "+w.week;sub=dm(mon)+" – "+dm(sun)+" "+w.year;
+    }else if(brkMode==="month"){
+      key=h.date.slice(0,7);
+      var mm=+h.date.slice(5,7)-1;label=MOIS[mm].charAt(0).toUpperCase()+MOIS[mm].slice(1)+" "+h.date.slice(0,4);sub="";
+    }else{
+      key=h.fourn?("z"+h.fourn.toLowerCase()):"zzz_none";
+      label=h.fourn||"Sans fournisseur";sub="";
+    }
+    if(!groups[key])groups[key]={label:label,sub:sub,tot:0,val:0,pen:0,n:0};
+    var g=groups[key];g.tot+=h.dur||0;g.n++;
+    if(h.valid)g.val+=h.dur||0;else g.pen+=h.dur||0;
+  });
+  var keys=Object.keys(groups).sort();if(brkMode!=="fourn")keys.reverse();
+  box.innerHTML=keys.map(function(k){var g=groups[k];
+    return '<div class="brkrow"><div class="lbl">'+g.label+(g.sub?'<span class="sub">'+g.sub+'</span>':'')+
+      '<span class="sub">'+g.n+' saisie'+(g.n>1?'s':'')+'</span></div>'+
+      '<div class="vals"><div class="big">'+fmtMin(g.tot)+'</div>'+
+      '<div class="det">✓<b> '+fmtMin(g.val)+'</b> · ⏳<i> '+fmtMin(g.pen)+'</i></div></div></div>';
+  }).join("");
+}
+
+/* ---------- EXPORT / IMPORT ---------- */
+function dl(name,content,type){
+  var b=new Blob([content],{type:type});var u=URL.createObjectURL(b);
+  var a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(u);a.remove();},500);
+}
+function stamp(){return new Date().toISOString().slice(0,10);}
+function exportJSON(){
+  var exp=JSON.parse(JSON.stringify(state));
+  ["visites","anomalies","montages"].forEach(function(t){(exp[t]||[]).forEach(function(x){if(x.photos)x.photos=x.photos.map(resolvePhoto).filter(Boolean);});});
+  dl("carnet-merch-"+stamp()+".json",JSON.stringify(exp,null,2),"application/json");
+  state.settings=state.settings||{};state.settings.lastExport=Date.now();state.settings.snoozeUntil=0;
+  save();toast("Sauvegarde exportée ✓");
+}
+
+/* ---------- RAPPEL DE SAUVEGARDE ---------- */
+function reminderDays(){return (state.settings&&state.settings.reminderDays)||1;}
+function localDateStr(d){d=d||new Date();return d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2);}
+function daysSinceExport(){var le=state.settings&&state.settings.lastExport;return le?(Date.now()-le)/86400000:null;}
+function hasData(){return !!(state.visites.length||state.anomalies.length||state.heures.length||state.montages.length);}
+function setReminderDays(v){state.settings=state.settings||{};state.settings.reminderDays=+v;save();toast(+v===1?"Rappel : chaque fin de journée":"Rappel réglé sur "+v+" jours");}
+function snoozeBackup(){state.settings=state.settings||{};state.settings.snoozeUntil=Date.now()+12*3600000;save();toast("Rappel reporté");}
+function renderBackupAlert(){
+  var box=document.getElementById("backupAlert");if(!box)return;
+  var snz=state.settings&&state.settings.snoozeUntil;
+  if(!hasData()||(snz&&Date.now()<snz)){box.style.display="none";return;}
+  var le=state.settings&&state.settings.lastExport;
+  var rd=reminderDays(),show=false,msg="";
+  if(rd===1){
+    var exportedToday=le&&localDateStr(new Date(le))===localDateStr();
+    if(!exportedToday){
+      var missedFullDay=le?((Date.now()-le)>=86400000):true;
+      if(new Date().getHours()>=17||missedFullDay){show=true;
+        msg=le?"Fin de journée : pensez à enregistrer la trace du jour (à envoyer à votre employeur si besoin).":"Pensez à enregistrer une première sauvegarde de vos données.";}
+    }
+  }else{
+    var ds=daysSinceExport();
+    if(ds===null||ds>=rd){show=true;
+      msg=(ds===null)?"Vous n'avez pas encore enregistré de sauvegarde.":("Dernière sauvegarde il y a "+Math.floor(ds)+" jour"+(Math.floor(ds)>1?"s":"")+".");}
+  }
+  if(!show){box.style.display="none";return;}
+  box.style.display="block";
+  box.innerHTML='<div class="alerttxt">⚠ '+msg+'</div>'+
+    '<div class="alertbtns"><button class="btn sm" onclick="exportJSON()">Exporter la trace</button>'+
+    '<button class="btn sm ghost" onclick="printReport(todayISO())">Rapport du jour</button>'+
+    '<button class="btn sm ghost" onclick="snoozeBackup()">Plus tard</button></div>';
+}
+
+/* ---------- SAUVEGARDE DES PHOTOS SUR LE TÉLÉPHONE ---------- */
+function dataURLtoBytes(d){var b64=(d.split(",")[1]||"");var bin=atob(b64);var n=bin.length;var arr=new Uint8Array(n);for(var i=0;i<n;i++)arr[i]=bin.charCodeAt(i);return arr;}
+function downloadBlob(blob,name){var u=URL.createObjectURL(blob);var a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(u);a.remove();},800);}
+function downloadSinglePhoto(name,dataURL){try{downloadBlob(new Blob([dataURLtoBytes(dataURL)],{type:"image/jpeg"}),name);}catch(e){}}
+function crc32(bytes){var c,crc=-1;if(!crc32.t){var t=[];for(var n=0;n<256;n++){c=n;for(var k=0;k<8;k++)c=c&1?(0xEDB88320^(c>>>1)):(c>>>1);t[n]=c>>>0;}crc32.t=t;}var T=crc32.t;for(var i=0;i<bytes.length;i++)crc=(crc>>>8)^T[(crc^bytes[i])&0xFF];return (crc^-1)>>>0;}
+function makeZip(files){
+  function u16(n){return [n&0xFF,(n>>8)&0xFF];}
+  function u32(n){return [n&0xFF,(n>>8)&0xFF,(n>>16)&0xFF,(n>>24)&0xFF];}
+  function enc(s){var a=[];for(var i=0;i<s.length;i++)a.push(s.charCodeAt(i)&0xFF);return a;}
+  var parts=[],central=[],offset=0;
+  files.forEach(function(f){
+    var nb=enc(f.name),crc=crc32(f.data),sz=f.data.length;
+    var local=[].concat(u32(0x04034b50),u16(20),u16(0),u16(0),u16(0),u16(0),u32(crc),u32(sz),u32(sz),u16(nb.length),u16(0),nb);
+    parts.push(new Uint8Array(local));parts.push(f.data);
+    central.push(new Uint8Array([].concat(u32(0x02014b50),u16(20),u16(20),u16(0),u16(0),u16(0),u16(0),u32(crc),u32(sz),u32(sz),u16(nb.length),u16(0),u16(0),u16(0),u16(0),u32(0),u32(offset),nb)));
+    offset+=local.length+sz;
+  });
+  var cenSize=central.reduce(function(a,c){return a+c.length;},0);
+  var end=new Uint8Array([].concat(u32(0x06054b50),u16(0),u16(0),u16(files.length),u16(files.length),u32(cenSize),u32(offset),u16(0)));
+  return new Blob(parts.concat(central).concat([end]),{type:"application/zip"});
+}
+function exportPhotosZip(){
+  var files=[],seen={};
+  function add(prefix,x){(x.photos||[]).forEach(function(p,i){var d=resolvePhoto(p);if(!d)return;
+    var base=safeName(prefix+"_"+(x.date||"")+"_"+(x.magasin||""))+"_"+(i+1);var name=base+".jpg",k=2;
+    while(seen[name]){name=base+"-"+(k++)+".jpg";}seen[name]=1;
+    files.push({name:name,data:dataURLtoBytes(d)});});}
+  state.visites.forEach(function(x){add("visite",x);});
+  state.anomalies.forEach(function(x){add("anomalie",x);});
+  state.montages.forEach(function(x){add("montage",x);});
+  if(!files.length){toast("Aucune photo à exporter");return;}
+  downloadBlob(makeZip(files),"photos-merch-"+stamp()+".zip");
+  toast(files.length+" photo(s) téléchargée(s)");
+}
+function toggleAutosave(on){state.settings=state.settings||{};state.settings.autoSavePhone=!!on;save();toast(on?"Enregistrement auto activé":"Enregistrement auto désactivé");}
+function syncSettingsUI(){var cb=document.getElementById("set-autosave");if(cb)cb.checked=!!(state.settings&&state.settings.autoSavePhone);var rd=document.getElementById("rem-days");if(rd)rd.value=String(reminderDays());var rp=document.getElementById("rep-day");if(rp&&!rp.value)rp.value=todayISO();}
+function exportCSV(){
+  var rows=[["Type","Date","Magasin","Fournisseur","Détail 1","Détail 2","Durée/Statut","Description"]];
+  state.visites.forEach(function(v){rows.push(["Visite",v.date,v.magasin,(v.fournisseurs||[]).join(", "),v.ville||"",(v.arr||"")+"-"+(v.dep||""),v.statut||"",(v.notes||"").replace(/\n/g," ")]);});
+  state.anomalies.forEach(function(a){rows.push(["Anomalie",a.date,a.magasin,a.fourn||"",a.type||"",a.grav||"","",(a.desc||"").replace(/\n/g," ")]);});
+  state.heures.forEach(function(h){rows.push(["Heure sup",h.date,h.magasin,h.fourn||"",(h.deb||"")+"-"+(h.fin||""),"",fmtMin(h.dur||0)+(h.valid?" (validée)":" (attente)"),(h.motif||"").replace(/\n/g," ")]);});
+  state.montages.forEach(function(m){rows.push(["Montage",m.date,m.magasin,"",m.op||"","",m.statut||"",(m.desc||"").replace(/\n/g," ")]);});
+  var csv=rows.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"';}).join(";");}).join("\r\n");
+  dl("carnet-merch-"+stamp()+".csv","\uFEFF"+csv,"text/csv");toast("Export CSV ✓");
+}
+function printReport(dayISO){
+  var w=window.open("","_blank");
+  var f=function(arr){return dayISO?arr.filter(function(x){return x.date===dayISO;}):arr;};
+  var V=f(state.visites),A=f(state.anomalies),H=f(state.heures),M=f(state.montages);
+  var css='body{font-family:Arial,sans-serif;color:#111;margin:24px;font-size:12px}h1{font-size:18px}h2{font-size:14px;border-bottom:2px solid #333;padding-bottom:4px;margin-top:24px}table{width:100%;border-collapse:collapse;margin-top:8px}td,th{border:1px solid #ccc;padding:6px;text-align:left;vertical-align:top}th{background:#f0f0f0}tr{page-break-inside:avoid}.thumbs img{max-width:120px;max-height:120px;margin:2px 4px 2px 0;border:1px solid #ddd;border-radius:3px;vertical-align:top}td.ph{width:140px}';
+  function tbl(head,rows){return '<table><tr>'+head.map(function(h){return '<th>'+h+'</th>';}).join("")+'</tr>'+(rows.join("")||'<tr><td colspan="'+head.length+'" style="color:#888">Aucune donnée</td></tr>')+'</table>';}
+  function phCell(ps){if(!ps||!ps.length)return '<td class="ph"></td>';return '<td class="ph"><div class="thumbs">'+ps.map(function(p){var s=resolvePhoto(p);return s?'<img src="'+s+'">':'';}).join("")+'</div></td>';}
+  var titre=dayISO?("Rapport du "+frDate(dayISO)):("Rapport complet — "+frDate(stamp()));
+  var fname=dayISO?("Rapport-merch-"+dayISO):("Rapport-merch-complet-"+stamp());
+  var html='<html><head><meta charset="utf-8"><title>'+fname+'</title><style>'+css+'</style></head><body>';
+  html+='<h1>Carnet de bord — '+titre+'</h1>';
+  var tot=H.reduce(function(a,h){return a+(h.dur||0);},0);
+  html+='<p>Visites : '+V.length+' &nbsp;|&nbsp; Anomalies : '+A.length+' &nbsp;|&nbsp; Heures sup.'+(dayISO?' du jour':' cumulées')+' : '+fmtMin(tot)+' &nbsp;|&nbsp; Montages : '+M.length+'</p>';
+  html+='<h2>Visites en point de vente</h2>'+tbl(["Date","Point de vente","Commune","Fournisseurs traités","Horaires","Résultat","Compte rendu","Photos"],byDateDesc(V).map(function(v){return '<tr><td>'+frDate(v.date)+'</td><td>'+esc(v.magasin)+'</td><td>'+esc(v.ville||"")+'</td><td>'+esc((v.fournisseurs||[]).join(", "))+'</td><td>'+(v.arr||"")+"–"+(v.dep||"")+'</td><td>'+esc(v.statut||"")+'</td><td>'+esc(v.notes||"")+'</td>'+phCell(v.photos)+'</tr>';}));
+  html+='<h2>Anomalies et incidents</h2>'+tbl(["Date","Point de vente","Fournisseur","Nature","Gravité","Description","Photos"],byDateDesc(A).map(function(a){return '<tr><td>'+frDate(a.date)+'</td><td>'+esc(a.magasin)+'</td><td>'+esc(a.fourn||"")+'</td><td>'+esc(a.type||"")+'</td><td>'+esc(a.grav||"")+'</td><td>'+esc(a.desc||"")+'</td>'+phCell(a.photos)+'</tr>';}));
+  html+='<h2>Heures supplémentaires</h2>'+tbl(["Date","Fournisseur","Point de vente","Horaires","Durée","Statut","Motif"],byDateDesc(H).map(function(h){return '<tr><td>'+frDate(h.date)+'</td><td>'+esc(h.fourn||"")+'</td><td>'+esc(h.magasin)+'</td><td>'+(h.deb||"")+"–"+(h.fin||"")+'</td><td>'+fmtMin(h.dur||0)+'</td><td>'+(h.valid?"Validée":"En attente")+'</td><td>'+esc(h.motif||"")+'</td></tr>';}));
+  html+='<h2>Montages promotionnels</h2>'+tbl(["Date","Point de vente","Opération","État","Détails","Photos"],byDateDesc(M).map(function(m){return '<tr><td>'+frDate(m.date)+'</td><td>'+esc(m.magasin)+'</td><td>'+esc(m.op||"")+'</td><td>'+esc(m.statut||"")+'</td><td>'+esc(m.desc||"")+'</td>'+phCell(m.photos)+'</tr>';}));
+  html+='</body></html>';
+  w.document.write(html);w.document.close();setTimeout(function(){w.print();},500);
+}
+function printReportDay(){var d=document.getElementById("rep-day");printReport((d&&d.value)||todayISO());}
+document.getElementById("importFile").addEventListener("change",function(e){
+  var f=e.target.files[0];if(!f)return;var r=new FileReader();
+  r.onload=function(){try{var d=JSON.parse(r.result);
+    if(!confirm("Remplacer les données actuelles par cette sauvegarde ?"))return;
+    state={visites:d.visites||[],anomalies:d.anomalies||[],heures:d.heures||[],montages:d.montages||[],magasins:d.magasins||[],settings:d.settings||{}};
+    ["visites","anomalies","montages"].forEach(function(t){(state[t]||[]).forEach(function(x){if(x.photos)x.photos=x.photos.map(function(p){return isData(p)?commitPhoto(p):p;});});});
+    save();toast("Sauvegarde restaurée ✓");}catch(err){toast("Fichier invalide");}};
+  r.readAsText(f);
+});
+function wipeAll(){if(!confirm("Effacer TOUTES les données de cet appareil ? Action irréversible."))return;if(!confirm("Confirme une dernière fois : tout supprimer ?"))return;state={visites:[],anomalies:[],heures:[],montages:[],magasins:[],settings:{}};try{localStorage.removeItem(KEY);}catch(e){}save();toast("Tout effacé");}
+
+/* hidden photo input */
+var pinput=document.createElement("input");
+pinput.type="file";pinput.accept="image/*";pinput.capture="environment";pinput.multiple=true;
+pinput.id="photoInput";pinput.style.display="none";pinput.addEventListener("change",function(e){onPhoto(e,true);});
+document.body.appendChild(pinput);
+var ginput=document.createElement("input");
+ginput.type="file";ginput.accept="image/*";ginput.multiple=true;
+ginput.id="galleryInput";ginput.style.display="none";ginput.addEventListener("change",function(e){onPhoto(e,false);});
+document.body.appendChild(ginput);
+
+/* init */
+load();
+try{if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){navigator.serviceWorker.register('sw.js').catch(function(){});}}catch(e){}
+try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist();}catch(e){}
+idbOpen(function(){idbLoadAll(function(){migratePhotos();renderAll();});});
+document.getElementById("fab").style.display="none"; // dash is default
+</script>
+</body>
+</html>

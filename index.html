@@ -1224,6 +1224,50 @@ function sbMerge(rows){
     else{var lt=arr[i].ts||0,rt=recd.ts||0; if(rt>=lt)arr[i]=recd;}
   });
 }
+/* ----- Photos cloud (bucket "photos") ----- */
+function dataURLtoBlob(durl){
+  var parts=durl.split(","), mime=((parts[0].match(/:(.*?);/))||[])[1]||"image/jpeg";
+  var bin=atob(parts[1]||""), n=bin.length, arr=new Uint8Array(n);
+  for(var i=0;i<n;i++)arr[i]=bin.charCodeAt(i);
+  return new Blob([arr],{type:mime});
+}
+function blobToDataURL(blob,cb){var fr=new FileReader();fr.onload=function(){cb(fr.result);};fr.onerror=function(){cb(null);};fr.readAsDataURL(blob);}
+function refPhotoIds(){
+  var ids=[];
+  ["visites","anomalies","montages"].forEach(function(t){
+    (state[t]||[]).forEach(function(x){(x.photos||[]).forEach(function(p){if(p&&!isData(p)&&ids.indexOf(p)<0)ids.push(p);});});
+  });
+  return ids;
+}
+function sbPhotoURL(pid){return SB_URL+"/storage/v1/object/photos/"+sbSession.user.id+"/"+pid;}
+function sbPushPhotos(cb){
+  if(!state.settings)state.settings={};
+  if(!state.settings.cloudPhotos)state.settings.cloudPhotos={};
+  var ids=refPhotoIds().filter(function(p){return photoStore[p]&&!state.settings.cloudPhotos[p];});
+  var i=0,done=0,fail=0;
+  (function next(){
+    if(i>=ids.length){cb&&cb(done,fail);return;}
+    var pid=ids[i++],blob;
+    try{blob=dataURLtoBlob(photoStore[pid]);}catch(e){fail++;return next();}
+    fetch(sbPhotoURL(pid),{method:"POST",headers:{"apikey":SB_KEY,"Authorization":"Bearer "+sbSession.access_token,"x-upsert":"true","Content-Type":blob.type||"image/jpeg"},body:blob})
+      .then(function(r){if(r.ok){state.settings.cloudPhotos[pid]=true;done++;}else{fail++;}next();})
+      .catch(function(){fail++;next();});
+  })();
+}
+function sbPullPhotos(cb){
+  var ids=refPhotoIds().filter(function(p){return !photoStore[p];});
+  var i=0,got=0;
+  (function next(){
+    if(i>=ids.length){cb&&cb(got);return;}
+    var pid=ids[i++];
+    fetch(sbPhotoURL(pid),{headers:{"apikey":SB_KEY,"Authorization":"Bearer "+sbSession.access_token}})
+      .then(function(r){if(!r.ok){next();return;}return r.blob().then(function(b){blobToDataURL(b,function(durl){if(durl){photoStore[pid]=durl;idbPut(pid,durl);if(!state.settings.cloudPhotos)state.settings.cloudPhotos={};state.settings.cloudPhotos[pid]=true;got++;}next();});});})
+      .catch(function(){next();});
+  })();
+}
+function pPushPhotos(){return new Promise(function(res){sbPushPhotos(function(d,f){res({done:d,fail:f});});});}
+function pPullPhotos(){return new Promise(function(res){sbPullPhotos(function(g){res({got:g});});});}
+
 function sbSync(){
   if(!sbSession)return;
   setSyncStatus("Synchronisation…");
@@ -1232,10 +1276,16 @@ function sbSync(){
     return sbPush();
   }).then(function(pu){
     if(!pu.ok)throw new Error("envoi "+(pu.status||""));
+    setSyncStatus("Envoi des photos…");
+    return pPushPhotos();
+  }).then(function(){
     return sbPull();
   }).then(function(pl){
     if(!pl.ok)throw new Error("réception "+(pl.status||""));
     sbMerge(pl.rows);
+    setSyncStatus("Réception des photos…");
+    return pPullPhotos();
+  }).then(function(){
     if(!state.settings)state.settings={};
     state.settings.lastSync=Date.now();
     save();

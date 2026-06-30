@@ -1098,20 +1098,71 @@ function printReport(dayISO){
   var w=window.open("","_blank");
   var f=function(arr){return dayISO?arr.filter(function(x){return x.date===dayISO;}):arr;};
   var V=f(state.visites),A=f(state.anomalies),H=f(state.heures),M=f(state.montages);
-  var css='body{font-family:Arial,sans-serif;color:#111;margin:24px;font-size:12px}h1{font-size:18px}h2{font-size:14px;border-bottom:2px solid #333;padding-bottom:4px;margin-top:24px}table{width:100%;border-collapse:collapse;margin-top:8px}td,th{border:1px solid #ccc;padding:6px;text-align:left;vertical-align:top}th{background:#f0f0f0}tr{page-break-inside:avoid}.thumbs img{max-width:120px;max-height:120px;margin:2px 4px 2px 0;border:1px solid #ddd;border-radius:3px;vertical-align:top}td.ph{width:140px}';
-  function tbl(head,rows){return '<table><tr>'+head.map(function(h){return '<th>'+h+'</th>';}).join("")+'</tr>'+(rows.join("")||'<tr><td colspan="'+head.length+'" style="color:#888">Aucune donnée</td></tr>')+'</table>';}
-  function phCell(ps){if(!ps||!ps.length)return '<td class="ph"></td>';return '<td class="ph"><div class="thumbs">'+ps.map(function(p){var s=resolvePhoto(p);return s?'<img src="'+s+'">':'';}).join("")+'</div></td>';}
-  var titre=dayISO?("Rapport du "+frDate(dayISO)):("Rapport complet — "+frDate(stamp()));
+  var css=''
+    +'*{box-sizing:border-box}'
+    +'body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;color:#1f2430;margin:0;padding:0;font-size:12px;line-height:1.5}'
+    +'.hd{background:#16140f;color:#fff;padding:22px 28px 18px;border-bottom:3px solid #e8b53d}'
+    +'.hd .brand{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#e8b53d;font-weight:bold}'
+    +'.hd h1{font-size:21px;margin:6px 0 1px;font-weight:600}.hd .sub{color:#f0e6cf;font-size:12px}'
+    +'.hd .ed{float:right;color:#f0e6cf;font-size:11px;margin-top:4px}'
+    +'.wrap{padding:22px 28px}'
+    +'.stats{width:100%;border-collapse:separate;border-spacing:8px 0;table-layout:fixed;margin-bottom:4px}'
+    +'.stats td{border:1px solid #ece5d4;border-left:4px solid #e8b53d;padding:9px 12px;background:#fffdf7}'
+    +'.stats .n{font-size:19px;font-weight:bold;color:#7a5a10}.stats .l{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:#8a7a55}'
+    +'h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#7a5a10;margin:24px 0 6px;padding-bottom:5px;border-bottom:2px solid #e8b53d;font-weight:bold}'
+    +'table.data{width:100%;border-collapse:collapse;table-layout:fixed}'
+    +'table.data th{background:#16140f;color:#fff;text-align:left;font-size:9.5px;letter-spacing:.02em;text-transform:uppercase;padding:7px 8px;font-weight:600;overflow-wrap:break-word}'
+    +'table.data td{padding:7px 8px;border-bottom:1px solid #efe9da;vertical-align:top;word-wrap:break-word;overflow-wrap:break-word}'
+    +'table.data tr:nth-child(even) td{background:#fdfaf2}'
+    +'.store{font-weight:bold}.muted{color:#8a7a55;font-size:11px}'
+    +'.tag{font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}'
+    +'.t-ok{color:#15803d}.t-min{color:#5c5340}.t-mod{color:#b45309}.t-crit{color:#b91c1c}'
+    +'.thumbs img{display:block;max-width:100%;max-height:110px;height:auto;margin:0 0 5px;border:1px solid #ece5d4}'
+    +'.tot td{font-weight:bold;background:#faf3e0;color:#7a5a10}'
+    +'.empty{color:#a99f86;font-style:italic;padding:9px 4px}'
+    +'tr{page-break-inside:avoid}h2{page-break-after:avoid}'
+    +'.foot{margin-top:26px;padding-top:8px;border-top:1px solid #ece5d4;color:#a99f86;font-size:10px;text-align:center}';
+  function head(cols){return '<tr>'+cols.map(function(h){return '<th>'+h+'</th>';}).join("")+'</tr>';}
+  function table(cols,widths,rows){var cg='<colgroup>'+widths.map(function(x){return '<col style="width:'+x+'%">';}).join("")+'</colgroup>';return '<table class="data">'+cg+head(cols)+(rows.join("")||'<tr><td colspan="'+cols.length+'" class="empty">Aucune saisie sur la période.</td></tr>')+'</table>';}
+  function ph(ps){if(!ps||!ps.length)return '';return '<div class="thumbs">'+ps.map(function(p){var s=resolvePhoto(p);return s?'<img src="'+s+'">':'';}).join("")+'</div>';}
+  function tag(t,c){return t?'<span class="tag '+c+'">'+esc(t)+'</span>':'';}
+  function resBadge(s){s=s||"";var l=s.toLowerCase();var c,txt=s;if(l.indexOf("partiel")>=0){c='t-mod';txt='Partielle';}else if(l.indexOf("refus")>=0){c='t-crit';}else if(l.indexOf("report")>=0){c='t-min';}else{c='t-ok';}return tag(txt,c);}
+  function gravBadge(g){g=g||"";var l=g.toLowerCase();var c=l.indexOf("crit")>=0?'t-crit':(l.indexOf("mod")>=0?'t-mod':'t-min');return tag(g,c);}
+  function store(nom,ville){return '<span class="store">'+esc(nom||"")+'</span>'+(ville?'<br><span class="muted">'+esc(ville)+'</span>':'');}
+
+  var titre=dayISO?("Rapport du "+frDateLong(dayISO)):"Rapport d'activité — synthèse complète";
   var fname=dayISO?("Rapport-merch-"+dayISO):("Rapport-merch-complet-"+stamp());
-  var html='<html><head><meta charset="utf-8"><title>'+fname+'</title><style>'+css+'</style></head><body>';
-  html+='<h1>Carnet de bord — '+titre+'</h1>';
   var tot=H.reduce(function(a,h){return a+(h.dur||0);},0);
-  html+='<p>Visites : '+V.length+' &nbsp;|&nbsp; Anomalies : '+A.length+' &nbsp;|&nbsp; Heures sup.'+(dayISO?' du jour':' cumulées')+' : '+fmtMin(tot)+' &nbsp;|&nbsp; Montages : '+M.length+'</p>';
-  html+='<h2>Visites en point de vente</h2>'+tbl(["Date","Point de vente","Commune","Fournisseurs traités","Horaires","Résultat","Compte rendu","Photos"],byDateDesc(V).map(function(v){return '<tr><td>'+frDate(v.date)+'</td><td>'+esc(v.magasin)+'</td><td>'+esc(v.ville||"")+'</td><td>'+esc((v.fournisseurs||[]).join(", "))+'</td><td>'+(v.arr||"")+"–"+(v.dep||"")+'</td><td>'+esc(v.statut||"")+'</td><td>'+esc(v.notes||"")+'</td>'+phCell(v.photos)+'</tr>';}));
-  html+='<h2>Anomalies et incidents</h2>'+tbl(["Date","Point de vente","Fournisseur","Nature","Gravité","Description","Photos"],byDateDesc(A).map(function(a){return '<tr><td>'+frDate(a.date)+'</td><td>'+esc(a.magasin)+'</td><td>'+esc(a.fourn||"")+'</td><td>'+esc(a.type||"")+'</td><td>'+esc(a.grav||"")+'</td><td>'+esc(a.desc||"")+'</td>'+phCell(a.photos)+'</tr>';}));
-  html+='<h2>Heures supplémentaires</h2>'+tbl(["Date","Fournisseur","Point de vente","Horaires","Durée","Statut","Motif"],byDateDesc(H).map(function(h){return '<tr><td>'+frDate(h.date)+'</td><td>'+esc(h.fourn||"")+'</td><td>'+esc(h.magasin)+'</td><td>'+(h.deb||"")+"–"+(h.fin||"")+'</td><td>'+fmtMin(h.dur||0)+'</td><td>'+(h.valid?"Validée":"En attente")+'</td><td>'+esc(h.motif||"")+'</td></tr>';}));
-  html+='<h2>Montages promotionnels</h2>'+tbl(["Date","Point de vente","Opération","État","Détails","Photos"],byDateDesc(M).map(function(m){return '<tr><td>'+frDate(m.date)+'</td><td>'+esc(m.magasin)+'</td><td>'+esc(m.op||"")+'</td><td>'+esc(m.statut||"")+'</td><td>'+esc(m.desc||"")+'</td>'+phCell(m.photos)+'</tr>';}));
-  html+='</body></html>';
+  var now=new Date();
+  var html='<html><head><meta charset="utf-8"><title>'+fname+'</title><style>'+css+'</style></head><body>';
+  html+='<div class="hd"><span class="ed">Édité le '+frDate(stamp())+' à '+("0"+now.getHours()).slice(-2)+':'+("0"+now.getMinutes()).slice(-2)+'</span>'
+      +'<span class="brand">FlowField · Carnet de bord</span>'
+      +'<h1>'+titre+'</h1><div class="sub">Suivi d\'activité merchandising</div></div><div class="wrap">';
+  html+='<table class="stats"><tr>'
+      +'<td><div class="n">'+V.length+'</div><div class="l">Visites</div></td>'
+      +'<td><div class="n">'+A.length+'</div><div class="l">Anomalies</div></td>'
+      +'<td><div class="n">'+fmtMin(tot)+'</div><div class="l">Heures sup.'+(dayISO?' du jour':'')+'</div></td>'
+      +'<td><div class="n">'+M.length+'</div><div class="l">Montages</div></td>'
+      +'</tr></table>';
+
+  html+='<h2>Visites en point de vente</h2>'+table(
+    ["Date","Point de vente","Horaires","Résultat","Fournisseurs","Compte rendu","Photos"],[11,15,10,14,14,20,16],
+    byDateDesc(V).map(function(v){return '<tr><td style="white-space:nowrap">'+frDate(v.date)+'</td><td>'+store(v.magasin,v.ville)+'</td><td>'+esc((v.arr||"")+(v.dep?" – "+v.dep:""))+'</td><td>'+resBadge(v.statut)+'</td><td>'+esc((v.fournisseurs||[]).join(", "))+'</td><td>'+esc(v.notes||"")+'</td><td>'+ph(v.photos)+'</td></tr>';}));
+
+  html+='<h2>Anomalies et incidents</h2>'+table(
+    ["Date","Point de vente","Fournisseur","Nature","Gravité","Description","Photos"],[11,15,14,13,11,20,16],
+    byDateDesc(A).map(function(a){return '<tr><td style="white-space:nowrap">'+frDate(a.date)+'</td><td>'+store(a.magasin,a.ville)+'</td><td>'+esc(a.fourn||"")+'</td><td>'+esc(a.type||"")+'</td><td>'+gravBadge(a.grav)+'</td><td>'+esc(a.desc||"")+'</td><td>'+ph(a.photos)+'</td></tr>';}));
+
+  var hrows=byDateDesc(H).map(function(h){return '<tr><td style="white-space:nowrap">'+frDate(h.date)+'</td><td>'+esc(h.fourn||"")+'</td><td>'+store(h.magasin)+'</td><td>'+esc((h.deb||"")+(h.fin?" – "+h.fin:""))+'</td><td>'+fmtMin(h.dur||0)+'</td><td>'+(h.valid?tag("Validée","t-ok"):tag("En attente","t-min"))+'</td><td>'+esc(h.motif||"")+'</td></tr>';});
+  if(H.length)hrows.push('<tr class="tot"><td colspan="4" style="text-align:right">Total des heures supplémentaires</td><td>'+fmtMin(tot)+'</td><td colspan="2"></td></tr>');
+  html+='<h2>Heures supplémentaires</h2>'+table(["Date","Fournisseur","Point de vente","Horaires","Durée","Statut","Motif"],[11,15,18,14,9,12,21],hrows);
+
+  html+='<h2>Montages promotionnels</h2>'+table(
+    ["Date","Point de vente","Opération","État","Détails","Photos"],[12,18,16,12,26,16],
+    byDateDesc(M).map(function(m){return '<tr><td style="white-space:nowrap">'+frDate(m.date)+'</td><td>'+store(m.magasin,m.ville)+'</td><td>'+esc(m.op||"")+'</td><td>'+esc(m.statut||"")+'</td><td>'+esc(m.desc||"")+'</td><td>'+ph(m.photos)+'</td></tr>';}));
+
+  html+='<div class="foot">Document généré par FlowField — carnet de bord personnel'+(dayISO?'':' (rapport complet)')+'. À conserver comme preuve d\'activité.</div>';
+  html+='</div></body></html>';
   w.document.write(html);w.document.close();setTimeout(function(){w.print();},500);
 }
 function printReportDay(){var d=document.getElementById("rep-day");printReport((d&&d.value)||todayISO());}
